@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :grade 
+
   resources :user
 
   root 'users#index'
