@@ -31,6 +31,7 @@ group :development, :test do
   gem 'capybara'
   gem 'faker'
   gem 'launchy'
+  gem 'database_cleaner'
 end
 
 # Use ActiveModel has_secure_password

@@ -3,7 +3,7 @@ require 'rails_helper'
 system 'clear'
 
 describe 'User pages' do
-  # let(:user) {  }
+  let(:user) { User.last }
   context 'on the homepage' do
 
     before { visit root_path }
@@ -19,7 +19,6 @@ describe 'User pages' do
         let(:last_name)  { "Swanson" }
         let(:new_email) { "new@example.com" }
         let(:password) { "foo" }
-        let(:user) { User.last }
 
         it 'should redirect to user profile' do
           fill_in "First name",             with: first_name
@@ -29,6 +28,22 @@ describe 'User pages' do
           fill_in "Password confirmation",  with: password
           click_button "sign_up"
           expect(current_path).to eq(user_path(user))
+        end
+      end
+      context 'with invalid information' do
+        let(:first_name)  { "Ron" }
+        let(:last_name)  { "Swanson" }
+        let(:new_email) { "new@example.com" }
+        let(:password) { "foo" }
+
+        it 'should redirect to root' do
+          fill_in "First name",             with: first_name
+          fill_in "Last name",              with: last_name
+          fill_in "Email",                  with: new_email
+          fill_in "Password",               with: password
+          fill_in "Password confirmation",  with: password
+          click_button "sign_up"
+          expect(current_path).to eq(root_path)
         end
 
       end
