@@ -37,6 +37,7 @@ describe 'User pages' do
         let(:password) { "foo" }
 
         it 'should redirect to root' do
+          User.create(first_name: "Ron", last_name: "Swanson", email: "new@example.com", password: "foo")
           fill_in "First name",             with: first_name
           fill_in "Last name",              with: last_name
           fill_in "Email",                  with: new_email
