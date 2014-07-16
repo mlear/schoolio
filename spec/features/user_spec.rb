@@ -3,12 +3,36 @@ require 'rails_helper'
 system 'clear'
 
 describe 'User pages' do
-
+  # let(:user) {  }
   context 'on the homepage' do
 
-    it 'sees a login button' do
-      visit '/'
-      expect(page).to have_link signin_path
+    before { visit root_path }
+    subject { page }
+
+    it { should have_content 'Log In'}
+    it { should have_content 'Sign Up'}
+
+    describe 'when a user signs up' do
+
+      context 'with valid information' do
+        let(:first_name)  { "Ron" }
+        let(:last_name)  { "Swanson" }
+        let(:new_email) { "new@example.com" }
+        let(:password) { "foo" }
+        let(:user) { User.last }
+
+        it 'should redirect to user profile' do
+          fill_in "First name",             with: first_name
+          fill_in "Last name",              with: last_name
+          fill_in "Email",                  with: new_email
+          fill_in "Password",               with: password
+          fill_in "Password confirmation",  with: password
+          click_button "sign_up"
+          expect(current_path).to eq(user_path(user))
+        end
+
+      end
     end
   end
+
 end
