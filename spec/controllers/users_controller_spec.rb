@@ -12,6 +12,15 @@ describe UsersController do
         password_confirmation: 'foobar' } }
     end
 
+    let(:invalid) do
+      { user: {
+        first_name: "",
+        last_name: "",
+        email: '',
+        password: '',
+        password_confirmation: '' } }
+    end
+
     describe 'with valid information' do
       it 'creates a new User' do
         get :create, valid
@@ -24,6 +33,11 @@ describe UsersController do
       it 'invalidates a duplicate user' do
         get :create, valid
         get :create, valid
+        expect(assigns(:user)).not_to be_valid
+      end
+
+      it 'invalidates a user with missing info' do
+        get :create, invalid
         expect(assigns(:user)).not_to be_valid
       end
 
