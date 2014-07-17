@@ -3,11 +3,13 @@ require 'spec_helper'
 
 describe SessionsController do
 
+  let(:user) { create :valid_user }
+  let(:valid) { { session: { email: user.email, password: user.password } } }
+  let(:invalid) { { session: { email: user.email, password: 'swag' } } }
+
   describe '#create' do
-    let(:user) { create :valid_user }
 
     describe 'with valid information' do
-      let(:valid) { { session: { email: user.email, password: user.password } } }
       it 'should sign in a user' do
         get :create, valid
         expect(session[:remember_token]).to_not be_blank
@@ -20,7 +22,6 @@ describe SessionsController do
     end
 
     describe 'with invalid information' do
-      let(:invalid) { { session: { email: user.email, password: 'swag' } } }
       it 'does not sign in a user' do
         get :create, invalid
         expect(session[:remember_token]).to be_blank
@@ -30,6 +31,15 @@ describe SessionsController do
         get :create, invalid
         expect(response.redirect_url).to include(root_path)
       end
+    end
+  end
+
+  describe '#destroy' do
+
+    it 'should set session[:remember_token] to nil' do
+      get :create, valid
+      get :destroy
+      expect(session[:remember_token]).to be_blank
     end
   end
 end

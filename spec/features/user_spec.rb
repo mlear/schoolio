@@ -61,6 +61,13 @@ describe 'User pages' do
 
     describe 'when a user logs out' do
 
+      it 'logs out user and redirects' do
+        fill_in "Login email",     with: user.email
+        fill_in "Login password",  with: user.password
+        click_button "sign_in"
+        click_button "log out"
+        expect(current_path).to eq(root_path)
+      end
     end
   end
 end

@@ -7,6 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <ul>
+      <li>
+        <button>Log In</button>
+      </li>
+      <li>
+        <button>Sign Up</button>
+      </li>
+      <li>
+        <%= button_to 'log out', signout_path, method: :delete %>
+      </li>
+    </ul>
+  </header>
 
 <%= yield %>
 
