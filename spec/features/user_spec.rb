@@ -81,5 +81,13 @@ describe 'User pages' do
       expect(page).to have_content user.first_name
     end
 
+    it 'displays the list of the users courses' do
+      visit root_path
+      fill_in "Login email",     with: user.email
+      fill_in "Login password",  with: user.password
+      click_button "sign_in"
+      expect(page).to have content user.courses
+    end
+
   end
 end
