@@ -34,20 +34,19 @@ describe 'Grades' do
       visit grade_url(grade)
       expect(page).to have_content(grade.gpa)
     end
-  #   it 'should display course subject' do
-  #     course
-  #     visit course_url(course)
-  #     expect(page).to have_content(course.subject)
-  #   end
-  #   it 'should have a link to edit the course' do
-  #     visit course_url(course)
-  #     click_link('Edit')
-  #     expect(current_path).to eq(edit_course_path(course))
-  #   end
-  #   it 'should have a button to delete the course' do
-  #     visit course_url(course)
-  #     expect{ click_on('delete') }.to change{Course.count}.by(-1)
-  #   end
+    it 'should display course for grade' do
+      visit grade_url(grade)
+      expect(page).to have_content(grade.course.name)
+    end
+    it 'should have a link to edit the grade' do
+      visit grade_url(grade)
+      click_link('Edit')
+      expect(current_path).to eq(edit_grade_path(grade))
+    end
+    it 'should have a button to delete the grade' do
+      visit grade_url(grade)
+      expect{ click_on('delete') }.to change{Grade.count}.by(-1)
+    end
   end
 
   # --------------------------------------------
