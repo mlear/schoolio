@@ -1,2 +1,8 @@
-<h1>Grades#show</h1>
-<p>Find me in app/views/grades/show.html.erb</p>
+<div>
+	Grade: <%= @grade.gpa %>
+	Course: <%= @grade.course.name %><br>
+	Subject: <%= @grade.course.subject %><br><br>
+	<%= link_to 'Edit', edit_grade_path %>
+	
+	<%= button_to 'delete', @grade, method: :delete %>
+</div>

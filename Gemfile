@@ -34,6 +34,7 @@ group :development, :test do
   gem 'faker'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'byebug'
 end
 
 group :test do

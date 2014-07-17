@@ -2,8 +2,8 @@
 	<%= f.label :gpa %>
 	<%= f.text_field :gpa %>
 
-	<%= f.label :course %>
-	<%= f.collection_select :course, Course.all, :id, :name %>
+	<%= f.label :course_id %>
+	<%= f.collection_select :course_id, Course.all, :id, :name %>
 
 	<%= f.submit "Add grade" %>
 <% end %>
