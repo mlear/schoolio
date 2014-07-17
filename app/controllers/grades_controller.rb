@@ -9,10 +9,8 @@ class GradesController < ApplicationController
   end
 
   def create
-    puts "----------" + params.to_s
     @grade = Grade.create(grade_params)
     redirect_to @grade
-    # @grade = Grade.create(user_id: 1, course_id: 1, gpa: 3.5)
   end
 
   def show

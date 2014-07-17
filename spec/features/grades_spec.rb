@@ -32,7 +32,6 @@ describe 'Grades' do
 
     it 'should show gpa and course name' do
       visit grade_url(grade)
-      # save_and_open_page
       expect(page).to have_content(grade.gpa)
     end
   #   it 'should display course subject' do
@@ -88,7 +87,6 @@ describe 'Grades' do
         course
         visit new_grade_url
         fill_in('grade_gpa', :with => 3.0)
-        save_and_open_page
         select(course.name, :from => "grade_course_id")
 
         click_on('Add grade')
