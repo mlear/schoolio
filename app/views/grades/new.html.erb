@@ -1,2 +1,9 @@
-<h1>Grades#new</h1>
-<p>Find me in app/views/grades/new.html.erb</p>
+<%= form_for @grade do |f| %>
+	<%= f.label :gpa %>
+	<%= f.text_field :gpa %>
+
+	<%= f.label :course %>
+	<%= f.collection_select :course, Course.all, :id, :name %>
+
+	<%= f.submit "Add grade" %>
+<% end %>

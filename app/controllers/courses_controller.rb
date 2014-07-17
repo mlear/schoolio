@@ -10,6 +10,7 @@ class CoursesController < ApplicationController
 
 	def create 
 		@course = Course.create(course_params)
+		redirect_to @course 
 	end
 
 	def show
@@ -42,7 +43,4 @@ class CoursesController < ApplicationController
 		def course_params
 			params.require(:course).permit(:subject, :name)
 		end
-
-
-
 end
