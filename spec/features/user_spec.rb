@@ -56,7 +56,7 @@ describe 'User pages' do
 
       describe 'with valid information' do
         it 'logs in a user and redirects to user profile' do
-          User.create(first_name: "Ron", last_name: "Swanson", email: "new@example.com", password: "foo")
+          user = create :valid_user
           fill_in "Login email",     with: "new@example.com"
           fill_in "Login password",  with: "foo"
           click_button "sign_in"
