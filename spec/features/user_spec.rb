@@ -50,15 +50,19 @@ describe 'User pages' do
       end
     end
 
-    # describe 'when a user signs in' do
-    #   context 'should display the user page' do
-    #     User.create(first_name: "Ron", last_name: "Swanson", email: "new@example.com", password: "foo")
-    #     fill_in "User Email",     with: "new@example.com"
-    #     fill_in "Password",       with: "foo"
-    #     click_button "login"
-    #     expect(current_path).to eq(user_path(user))
-    #   end
-    # end
+    describe 'when a user signs in' do
+      before { visit root_path }
+      subject { page }
+      context 'should display the user page' do
+        it 'logs in a user with valid info' do
+          User.create(first_name: "Ron", last_name: "Swanson", email: "new@example.com", password: "foo")
+          fill_in "Login email",     with: "new@example.com"
+          fill_in "Login password",  with: "foo"
+          click_button "sign_in"
+          expect(current_path).to eq(user_path(user))
+        end
+      end
+    end
 
   end
 

@@ -15,18 +15,12 @@
   <%= f.submit :sign_up %>
 <%end%>
 
-git <%= form_for :session do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :email %>
+<%= form_for :session, url: sessions_path do |f| %>
+  <%= f.label :email, 'Login email' %>
   <%= f.text_field :email %>
-  <%= f.label :password %>
+  <%= f.label :password, 'Login password' %>
   <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit :sign_up %>
+  <%= f.submit :sign_in %>
 <%end%>
 
 
