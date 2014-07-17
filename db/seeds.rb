@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+50.times {
+	num = rand(1..10)
+	Grade.create(user_id: num, course_id: num, gpa: 3.5)
+}
