@@ -1,0 +1,9 @@
+<%= form_for @course do |f| %>
+	<%= f.label :subject %>
+	<%= f.text_field :subject %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.submit "Update course" %>
+<% end %>

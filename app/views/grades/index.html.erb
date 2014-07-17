@@ -1,2 +1,7 @@
-<h1>Grades#index</h1>
-<p>Find me in app/views/grades/index.html.erb</p>
+<div>
+	<% @grades.each do |grade| %>
+		<p><%= link_to "#{grade.gpa} #{grade.course.name}", grade_path(grade) %></p>
+	<% end %>
+
+	<b><%= link_to 'Create a new Grade', new_grade_path %></b>
+</div>
