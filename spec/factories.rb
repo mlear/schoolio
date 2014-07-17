@@ -11,5 +11,14 @@ FactoryGirl.define do
     last_name "Swanson"
     email "noneofyour@damn.biz"
     password "foobar"
+    password_confirmation "foobar"
+  end
+
+  factory :invalid_user, class: User do
+    first_name ""
+    last_name ""
+    email ""
+    password ""
+    password_confirmation ""
   end
 end
