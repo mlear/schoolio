@@ -50,6 +50,53 @@ describe UsersController do
     end
   end
 
+  describe '#edit' do
+    let(:user) { create :valid_user }
+
+    it 'passes the current user to the edit view' do
+      sign_in(user)
+      get :edit, id: user.id
+      expect(assigns :user).to be_a User
+      expect(assigns(:user).first_name).to eq user.first_name
+    end
+  end
+
+  describe '#update' do
+    let(:user) { create :valid_user }
+    let(:user_params) { attributes_for :unsaved_user }
+
+
+    context 'with valid authorization' do
+      let(:update) { { id: 11, user: user_params } }
+
+      it 'updates user information' do
+        sign_in user
+        post :update, update
+        expect(assigns(:user).first_name).to eq 'Leslie'
+        expect(response.redirect?).to be true
+      end
+    end
+  end
+
+  xdescribe '#non-update' do
+    let(:user) { create :valid_user }
+    let(:user_params) { attributes_for :unsaved_user }
+
+
+    context 'with invalid authorization' do
+      let(:update) { { id: 11, user: user_params } }
+
+      it 'does not update user information' do
+        post :update, update
+        expect(assigns(:user).first_name).not_to eq 'Leslie'
+        expect(response.redirect?).to be true
+      end
+    end
+
+
+
+  end
+
   def sign_in(user)
     session[:remember_token] = user.id
   end

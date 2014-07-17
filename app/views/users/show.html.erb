@@ -1,4 +1,5 @@
-hi bud
+<button>hi bud</button>
+<%= link_to 'settings', edit_user_path %>
 <%=@user.first_name%>
 <% @user.courses.each do |course| %>
   <li> <%= link_to course.name, course %></li>

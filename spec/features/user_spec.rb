@@ -43,18 +43,15 @@ describe 'User pages' do
     describe 'when a user logs in' do
       context 'with valid information' do
         it 'logs in a user and redirects to user profile' do
-          fill_in "Login email",     with: user.email
-          fill_in "Login password",  with: user.password
-          click_button "sign_in"
+          sign_in user
           expect(current_path).to eq user_path user
         end
       end
 
       describe 'with invalid information' do
+        let(:invalid_user) { build :invalid_user }
         it 'redirects to home page' do
-          fill_in "Login email",     with: user.email
-          fill_in "Login password",  with: 'stupid-head'
-          click_button "sign_in"
+          sign_in invalid_user
           expect(current_path).to eq(root_path)
         end
       end
@@ -63,9 +60,7 @@ describe 'User pages' do
     describe 'when a user logs out' do
 
       it 'logs out user and redirects' do
-        fill_in "Login email",     with: user.email
-        fill_in "Login password",  with: user.password
-        click_button "sign_in"
+        sign_in user
         click_button "log out"
         expect(current_path).to eq(root_path)
       end
@@ -74,36 +69,45 @@ describe 'User pages' do
 
   context 'on the user page' do
 
-    before { user.courses << course }
+    before { user.courses << course; sign_in user }
 
     it 'greets the user by name' do
-      visit root_path
-      fill_in "Login email",     with: user.email
-      fill_in "Login password",  with: user.password
-      click_button "sign_in"
       expect(page).to have_content user.first_name
     end
 
     it 'displays the list of the users courses' do
-      visit root_path
-      fill_in "Login email",     with: user.email
-      fill_in "Login password",  with: user.password
-      click_button "sign_in"
       expect(page).to have_content(user.courses.first.name)
     end
 
     it 'has links to the users courses' do
-      visit root_path
-      fill_in "Login email",     with: user.email
-      fill_in "Login password",  with: user.password
-      click_button "sign_in"
       click_on "Musicology 101"
       expect(current_path).to eq(course_path(course))
     end
 
-    it 'looks like facebook' do
-      visit root_path
-      expect(current_path).to be(facebook)
+    it 'has a user settings button' do
+      click_on "settings"
+      expect(current_path).to eq(edit_user_path(user))
+    end
+  end
 
+  context 'on the edit page' do
+    before { sign_in(user); visit edit_user_path(user) }
+
+    it 'has a form field' do
+      expect(page).to have_content(user.first_name)
+    end
+
+    it 'can update a user' do
+      fill_in 'Password',       with: user.password
+      click_on "update"
+      expect(current_path).to eq(user_path(user))
+    end
+  end
+
+  def sign_in(user)
+    visit root_path
+    fill_in "Login email",     with: user.email
+    fill_in "Login password",  with: user.password
+    click_button "sign_in"
   end
 end

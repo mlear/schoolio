@@ -20,14 +20,36 @@ class UsersController < ApplicationController
   end
 
   def show
+    assign_user
+  end
+
+  def edit
+    assign_user
+    render 'edit'
+  end
+
+  def update
+    p params
+    p User.last
+    @user = User.find(params[:id])
+    if signed_in?
+      @user.update(user_params)
+      p @user
+      redirect_to user_path(@user)
+    else
+      redirect_to 'edit'
+    end
+  end
+
+  private
+
+  def assign_user
     if params[:id]
       @user = User.find params[:id]
     else
       @user = current_user
     end
   end
-
-  private
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
