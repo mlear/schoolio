@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
+  get '/dashboard' => 'users#show'
+
   root 'users#index'
 
   match '/signup',  to: 'users#new',            via: 'get'

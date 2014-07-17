@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
+      sign_in @user
       redirect_to @user
     else
       redirect_to root_path
@@ -19,7 +20,11 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    if params[:id]
+      @user = User.find params[:id]
+    else
+      @user = current_user
+    end
   end
 
   private

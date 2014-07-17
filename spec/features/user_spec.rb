@@ -70,4 +70,16 @@ describe 'User pages' do
       end
     end
   end
+
+  context 'on the user page' do
+
+    it 'greets the user by name' do
+      visit root_path
+      fill_in "Login email",     with: user.email
+      fill_in "Login password",  with: user.password
+      click_button "sign_in"
+      expect(page).to have_content user.first_name
+    end
+
+  end
 end
