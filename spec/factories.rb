@@ -21,4 +21,10 @@ FactoryGirl.define do
     password ""
     password_confirmation ""
   end
+
+  factory :course do
+    subject 'Music'
+    name 'Musicology 101'
+  end
+
 end

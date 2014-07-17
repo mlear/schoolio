@@ -6,6 +6,7 @@ describe User do
   let(:course) { create :course }
 
   it 'has many courses' do
+    user.courses << course
     expect(user.courses.first).to be_a Course
   end
 end

@@ -21,16 +21,16 @@ describe 'Course Features' do
   end
 
   context 'creating and saving a new course' do
-  	it 'should increase courses in the database by 1' do 
+  	it 'should increase courses in the database by 1' do
   		visit new_course_url
   		fill_in('course_subject', :with => "Math")
   		fill_in('course_name', :with => "Multivariate Calculus")
 
-  		expect{ click_on('Add course') }.to change{Course.count}.by(1) 
+  		expect{ click_on('Add course') }.to change{Course.count}.by(1)
 
   	end
 
-  	it 'should redirect to the new courses show' do 
+  	it 'should redirect to the new courses show' do
   		visit new_course_url
   		fill_in('course_subject', :with => "Math")
   		fill_in('course_name', :with => "Multivariate Calculus")
@@ -41,7 +41,7 @@ describe 'Course Features' do
   	end
   end
 
-  context 'going to the course edit page' do
+  pending 'going to the course edit page' do
 
   	let(:course) {Course.create(name: 'Calculus', subject: 'Math')}
 
@@ -62,16 +62,16 @@ describe 'Course Features' do
   end
 
   # context 'editing a course' do
-  # 	it 'should increase courses in the database by 1' do 
+  # 	it 'should increase courses in the database by 1' do
   # 		visit new_course_url
   # 		fill_in('course_subject', :with => "Math")
   # 		fill_in('course_name', :with => "Multivariate Calculus")
 
-  # 		expect{ click_on('Add course') }.to change{Course.count}.by(1) 
+  # 		expect{ click_on('Add course') }.to change{Course.count}.by(1)
 
   # 	end
 
-  # 	it 'should redirect to the new courses show' do 
+  # 	it 'should redirect to the new courses show' do
   # 		visit new_course_url
   # 		fill_in('course_subject', :with => "Math")
   # 		fill_in('course_name', :with => "Multivariate Calculus")

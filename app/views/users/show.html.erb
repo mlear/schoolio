@@ -1,2 +1,5 @@
 hi bud
 <%=@user.first_name%>
+<% @user.courses.each do |course| %>
+  <li> <%= link_to course.name, course %></li>
+<%end%>

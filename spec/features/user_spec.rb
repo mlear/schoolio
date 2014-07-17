@@ -83,10 +83,11 @@ describe 'User pages' do
 
     it 'displays the list of the users courses' do
       visit root_path
+      user.courses << Course.new(subject: "Relgion", name: "Have you been Saved?")
       fill_in "Login email",     with: user.email
       fill_in "Login password",  with: user.password
       click_button "sign_in"
-      expect(page).to have content user.courses
+      expect(page).to have_content(user.courses.first.name)
     end
 
   end
