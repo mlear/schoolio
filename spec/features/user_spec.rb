@@ -58,5 +58,9 @@ describe 'User pages' do
         end
       end
     end
+
+    describe 'when a user logs out' do
+
+    end
   end
 end
