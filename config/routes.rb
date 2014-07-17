@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
+  resources :courses
   resources :grades 
   resources :user
 
