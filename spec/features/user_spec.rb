@@ -101,5 +101,9 @@ describe 'User pages' do
       expect(current_path).to eq(course_path(course))
     end
 
+    it 'looks like facebook' do
+      visit root_path
+      expect(current_path).to be(facebook)
+
   end
 end
