@@ -1,4 +1,4 @@
-#5 Day Project - SCHOOL.IO
+#5 Day Project - SCHOOL.IO                               [![Build Status](https://travis-ci.org/zpfled/schoolio.svg?branch=master)](https://travis-ci.org/zpfled/schoolio)
 
 ##MVP
 
