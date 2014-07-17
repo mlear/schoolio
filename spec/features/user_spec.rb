@@ -53,8 +53,9 @@ describe 'User pages' do
     describe 'when a user signs in' do
       before { visit root_path }
       subject { page }
-      context 'should display the user page' do
-        it 'logs in a user with valid info' do
+
+      describe 'with valid information' do
+        it 'logs in a user and redirects to user profile' do
           User.create(first_name: "Ron", last_name: "Swanson", email: "new@example.com", password: "foo")
           fill_in "Login email",     with: "new@example.com"
           fill_in "Login password",  with: "foo"
@@ -62,6 +63,17 @@ describe 'User pages' do
           expect(current_path).to eq(user_path(user))
         end
       end
+
+      describe 'with invalid information' do
+        it 'redirects to home page' do
+          fill_in "Login email",     with: "newbie@example.com"
+          fill_in "Login password",  with: "foo"
+          click_button "sign_in"
+          expect(current_path).to eq(root_path)
+        end
+
+      end
+
     end
 
   end

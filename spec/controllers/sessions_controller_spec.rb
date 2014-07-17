@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'spec_helper'
 
 describe SessionsController do
 
@@ -15,8 +16,7 @@ describe SessionsController do
     it 'should redirect user' do
       User.create(first_name: "Ron", last_name: "Swanson", email: "allofyour@damn.biz", password: "foobar")
       get :create, valid
-      p response.location
-      expect(response.redirect_url).to eq(root_path)
+      expect(response.redirect_url).to include(root_path)
     end
 
   end
