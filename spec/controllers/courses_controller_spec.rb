@@ -8,7 +8,7 @@ RSpec.describe GradesController, :type => :controller do
     it "returns http success" do
       # get 'index'
       visit courses_url 
-      expect(current_path.to_s).to eq('/courses')
+      expect(current_path).to eq('/courses')
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe GradesController, :type => :controller do
   describe "GET 'new'" do
     it "returns http success" do
       visit new_course_url
-      expect(current_path.to_s).to eq('/courses/new')
+      expect(current_path).to eq('/courses/new')
     end
   end
 

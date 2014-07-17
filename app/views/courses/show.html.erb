@@ -1,0 +1,7 @@
+<div>
+	Course: <%= @course.name %><br>
+	Subject: <%= @course.subject %><br><br>
+	<%= link_to 'Edit', edit_course_path %>
+	
+	<%= button_to 'delete', @course, method: :delete %>
+</div>
