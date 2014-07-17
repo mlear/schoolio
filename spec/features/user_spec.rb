@@ -5,6 +5,7 @@ system 'clear'
 describe 'User pages' do
   let(:user) { create :valid_user }
   let(:new_user) { build :unsaved_user }
+  let(:course) { create :course }
 
   context 'on the homepage' do
     before { visit root_path }
@@ -73,6 +74,8 @@ describe 'User pages' do
 
   context 'on the user page' do
 
+    before { user.courses << course }
+
     it 'greets the user by name' do
       visit root_path
       fill_in "Login email",     with: user.email
@@ -83,11 +86,19 @@ describe 'User pages' do
 
     it 'displays the list of the users courses' do
       visit root_path
-      user.courses << Course.new(subject: "Relgion", name: "Have you been Saved?")
       fill_in "Login email",     with: user.email
       fill_in "Login password",  with: user.password
       click_button "sign_in"
       expect(page).to have_content(user.courses.first.name)
+    end
+
+    it 'has links to the users courses' do
+      visit root_path
+      fill_in "Login email",     with: user.email
+      fill_in "Login password",  with: user.password
+      click_button "sign_in"
+      click_on "Musicology 101"
+      expect(current_path).to eq(course_path(course))
     end
 
   end
