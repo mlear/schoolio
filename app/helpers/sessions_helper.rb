@@ -12,6 +12,7 @@ module SessionsHelper
   end
 
   def signed_in?
+    return false unless session[:remember_token]
     current_user != nil
   end
 end

@@ -67,7 +67,7 @@ describe UsersController do
 
 
     context 'with valid authorization' do
-      let(:update) { { id: 11, user: user_params } }
+      let(:update) { { id: user.id, user: user_params } }
 
       it 'updates user information' do
         sign_in user
@@ -78,13 +78,13 @@ describe UsersController do
     end
   end
 
-  xdescribe '#non-update' do
+  describe '#non-update' do
     let(:user) { create :valid_user }
     let(:user_params) { attributes_for :unsaved_user }
 
 
     context 'with invalid authorization' do
-      let(:update) { { id: 11, user: user_params } }
+      let(:update) { { id: user.id, user: user_params } }
 
       it 'does not update user information' do
         post :update, update
@@ -93,8 +93,17 @@ describe UsersController do
       end
     end
 
+  end
 
+  describe '#destroy' do
+    let(:user) { create :valid_user }
 
+    it 'deletes the user from the database' do
+      sign_in user
+      post :destroy, id: user.id
+      expect(User.last).to be(nil)
+      expect(response.redirect?).to be true
+    end
   end
 
   def sign_in(user)

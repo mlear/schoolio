@@ -29,16 +29,20 @@ class UsersController < ApplicationController
   end
 
   def update
-    p params
-    p User.last
     @user = User.find(params[:id])
     if signed_in?
       @user.update(user_params)
-      p @user
       redirect_to user_path(@user)
     else
       redirect_to 'edit'
     end
+  end
+
+  def destroy
+    @user = current_user
+    User.destroy(@user.id)
+    sign_out
+    redirect_to root_path
   end
 
   private

@@ -88,7 +88,13 @@ describe 'User pages' do
       click_on "settings"
       expect(current_path).to eq(edit_user_path(user))
     end
+
+    it 'has a delete user button' do
+      click_on "Delete User"
+      expect(current_path).to eq(root_path)
+    end
   end
+
 
   context 'on the edit page' do
     before { sign_in(user); visit edit_user_path(user) }
