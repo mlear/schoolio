@@ -6,3 +6,7 @@
 
 [1]: https://travis-ci.org/zpfled/schoolio
 [2]: https://coveralls.io/r/zpfled/schoolio
+
+## Schema
+
+![schema](schema.png)
