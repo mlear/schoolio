@@ -25,14 +25,14 @@ class GradesController < ApplicationController
   def update
     set_grade
     @grade.update_attributes(grade_params)
-    redirect_to @grades
+    redirect_to @grade
   end
 
   def destroy
     set_grade
     @grade.destroy 
 
-    redirect_to @grades
+    redirect_to @grade
   end
 
   def set_grade

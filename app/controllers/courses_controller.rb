@@ -24,14 +24,14 @@ class CoursesController < ApplicationController
 	def update
 		set_course
 		@course.update_attributes(course_params)
-		redirect_to @courses
+		redirect_to @course
 	end
 
 	def destroy
 		set_course
 		@course.destroy
 
-		redirect_to @courses
+		redirect_to @course
 	end
 
 	def set_course
