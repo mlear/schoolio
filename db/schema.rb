@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140716221000) do
   create_table "grades", force: true do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-    t.float    "gpa"
+    t.decimal  "gpa"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

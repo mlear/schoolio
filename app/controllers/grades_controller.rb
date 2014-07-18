@@ -34,9 +34,22 @@ class GradesController < ApplicationController
     redirect_to @grade
   end
 
+  def chart_info
+    new_grades = []
+    @student_grades = Grade.where(user_id: current_user)
+    puts @student_grades
+
+    @student_grades.each do |grade|
+      new_grades << [grade.course.name, grade.gpa]
+    end
+    render json: new_grades
+
+  end
+
   def set_grade
     @grade = Grade.find(params[:id])
   end
+
 
   private
 

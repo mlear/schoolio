@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require d3
+//= require c3
+//= require progress
 //= require_tree .
+
+
+
