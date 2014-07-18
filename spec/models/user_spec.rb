@@ -12,6 +12,5 @@ describe User do
 
   it {should have_many(:courses)}
   it {should have_many(:grades)}
-  it {should belong_to(:role)}
 
 end

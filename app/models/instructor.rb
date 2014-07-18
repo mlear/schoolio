@@ -1,3 +1,4 @@
-class Instructor < ActiveRecord::Base
-	has_many :users, as: :role
+class Instructor < User
+	has_many :wats
+	has_many :students, through: :wats
 end

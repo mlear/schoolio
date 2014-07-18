@@ -1,6 +1,18 @@
 class SessionsController < ApplicationController
+  
   def create
-    @user = User.find_by(email: params[:session][:email].downcase)
+    @user = Student.find_by(email: params[:session][:email].downcase)
+    if @user.empty?
+      @user = Instructor.find_by(email: params[:session][:email].downcase)
+      if @user.empty?
+        redirect_to root_path
+      else
+        redirect_to @user
+      end
+    else
+      redirect_to @user
+    end
+
     if @user && @user.authenticate(params[:session][:password])
       sign_in(@user)
       redirect_to @user
