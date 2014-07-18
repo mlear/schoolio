@@ -39,7 +39,7 @@ class GradesController < ApplicationController
     @student_grades = Grade.where(user_id: current_user)
 
     @student_grades.each do |grade|
-      new_grades << [grade.course.name, grade.gpa]
+      new_grades << { course: grade.course.name, grade: grade.gpa }
     end
     render json: new_grades
 
