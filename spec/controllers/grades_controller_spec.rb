@@ -26,4 +26,19 @@ RSpec.describe GradesController, :type => :controller do
     end
   end
 
+  describe '#update' do
+
+    let(:grade1) {{id: grade.id, grade: { gpa: 1.0 }}}
+
+
+    context 'with form fill out' do
+
+      it 'updates grade information' do
+        post :update, grade1
+        expect(assigns(:grade).gpa).to eq 1.0
+        expect(response.redirect?).to be true
+      end
+    end
+  end
+
 end

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Schoolio/app/controllers/courses_controller.rb": [
+      "/Users/apprentice/Schoolio/app/controllers/grades_controller.rb": [
         1,
         null,
         1,
@@ -46,6 +46,7 @@
         null,
         1,
         1,
+        null,
         null,
         null
       ],
@@ -57,13 +58,13 @@
         1,
         null
       ],
-      "/Users/apprentice/Schoolio/app/models/course.rb": [
+      "/Users/apprentice/Schoolio/app/models/grade.rb": [
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1405642763
+    "timestamp": 1405643292
   }
 }
