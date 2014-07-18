@@ -5,8 +5,7 @@
 - students can log in with a secure password, view a chart of their progress in a given subject, and that's pretty much it for now
 
 [1]: https://travis-ci.org/zpfled/schoolio
-[2]: https://coveralls.io/r/zpfled/schoolio
-
+[2]: https://coveralls.io/r/zpfled/schoolio?branch=master
 ## Schema
 
 ![schema](schema.png)
