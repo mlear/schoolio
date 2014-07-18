@@ -37,7 +37,6 @@ class GradesController < ApplicationController
   def chart_info
     new_grades = []
     @student_grades = Grade.where(user_id: current_user)
-    puts @student_grades
 
     @student_grades.each do |grade|
       new_grades << [grade.course.name, grade.gpa]
