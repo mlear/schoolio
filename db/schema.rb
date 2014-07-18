@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 20140718221527) do
   end
 
   create_table "students", force: true do |t|
-    t.integer  "student_behavior_id"
     t.integer  "learning_style_id"
+    t.integer  "student_behavior_id"
     t.integer  "behaviour_trait_id"
     t.integer  "student_interest_id"
     t.integer  "grade"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20140718221527) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
