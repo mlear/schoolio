@@ -1,45 +1,13 @@
 <ul>
-  <%= form_for ( @sign_up ? :session, url: sessions_path : User.new ) do |f| %>
-    <%= f.label :email, 'Login email' %>
+  <%= form_for :session, url: sessions_path do |f| %>
+
+    <%= f.label :email, 'email' %>
     <%= f.text_field :email %>
-    <%= f.label :password, 'Login password' %>
+
+    <%= f.label :password, 'password' %>
     <%= f.password_field :password %>
+
     <%= f.submit :sign_in %>
-  <%end%>
 
-  <%= form_for User.new do |f| %>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-    <%= f.submit :sign_up %>
   <%end%>
-</ul>
-
-<ul>
-  <form class="<%= action %>-form" action="/<%= action %>" method="post">
-    <li>
-      <input class="form-field user-email" type="text" name="user[email]" placeholder="your email" autofocus>
-    </li>
-    <% if action == 'signup' %>
-    <li>
-      <input class="form-field user-name" type="text" name="user[name]" placeholder="your name">
-    </li>
-    <% end %>
-    <li>
-      <input class="form-field user-password" type="password" name="user[password]" placeholder="your password">
-    </li>
-    <li>
-      <input class="form-field btn btn-<%= action == 'login' ? 'primary' : 'secondary' %>" type="submit" value="<%= action %>">
-    </li>
-    <li>
-      <button class="form-field btn btn-alt">back to home</button>
-    </li>
-  </form>
 </ul>

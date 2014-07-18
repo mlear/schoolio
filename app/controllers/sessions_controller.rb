@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
       sign_in(@user)
       redirect_to @user
     else
+      @sign_up = true
       redirect_to root_path
     end
   end
