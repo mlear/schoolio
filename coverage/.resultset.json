@@ -1,11 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/courses_controller.rb": [
-=======
-      "/Users/home/ruby/schoolio/app/controllers/courses_controller.rb": [
->>>>>>> 68f4fd1d65e0e2154de0c67cb276a5a9d01f5fb4
         1,
         null,
         1,
@@ -53,11 +49,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/application_controller.rb": [
-=======
-      "/Users/home/ruby/schoolio/app/controllers/application_controller.rb": [
->>>>>>> 68f4fd1d65e0e2154de0c67cb276a5a9d01f5fb4
         1,
         null,
         null,
@@ -65,11 +57,7 @@
         1,
         null
       ],
-<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/grades_controller.rb": [
-=======
-      "/Users/home/ruby/schoolio/app/controllers/grades_controller.rb": [
->>>>>>> 68f4fd1d65e0e2154de0c67cb276a5a9d01f5fb4
         1,
         null,
         1,
@@ -130,11 +118,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/sessions_controller.rb": [
-=======
-      "/Users/home/ruby/schoolio/app/controllers/sessions_controller.rb": [
->>>>>>> 68f4fd1d65e0e2154de0c67cb276a5a9d01f5fb4
         1,
         1,
         15,
@@ -153,11 +137,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/users_controller.rb": [
-=======
-      "/Users/home/ruby/schoolio/app/controllers/users_controller.rb": [
->>>>>>> 68f4fd1d65e0e2154de0c67cb276a5a9d01f5fb4
         1,
         1,
         21,
@@ -220,54 +200,47 @@
         null,
         null
       ],
-<<<<<<< HEAD
+      "/Users/apprentice/Schoolio/app/models/behavior_trait.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/apprentice/Schoolio/app/models/course.rb": [
-=======
-      "/Users/home/ruby/schoolio/app/models/behavior_trait.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/home/ruby/schoolio/app/models/course.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/home/ruby/schoolio/app/models/grade.rb": [
->>>>>>> 68f4fd1d65e0e2154de0c67cb276a5a9d01f5fb4
-        1,
-        1,
-        1,
-        null
-      ],
-<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/grade.rb": [
-=======
-      "/Users/home/ruby/schoolio/app/models/instructor.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/home/ruby/schoolio/app/models/interest.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/home/ruby/schoolio/app/models/learning_style.rb": [
+      "/Users/apprentice/Schoolio/app/models/instructor.rb": [
         1,
         1,
         null
       ],
-      "/Users/home/ruby/schoolio/app/models/student_behavior.rb": [
+      "/Users/apprentice/Schoolio/app/models/interest.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/home/ruby/schoolio/app/models/student_interest.rb": [
+      "/Users/apprentice/Schoolio/app/models/learning_style.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Schoolio/app/models/student_behavior.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Schoolio/app/models/student_interest.rb": [
         1,
         null,
         1,
@@ -275,27 +248,18 @@
         null,
         null
       ],
-      "/Users/home/ruby/schoolio/app/models/student.rb": [
+      "/Users/apprentice/Schoolio/app/models/student.rb": [
         1,
         1,
         1,
         1,
         1,
->>>>>>> 68f4fd1d65e0e2154de0c67cb276a5a9d01f5fb4
         1,
         1,
         1,
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1405715940
-=======
-<<<<<<< HEAD
-    "timestamp": 1405715892
-=======
-    "timestamp": 1405709828
->>>>>>> d3eae73ed2572fa5c2ed5d32eb9e60044bda0a74
->>>>>>> 68f4fd1d65e0e2154de0c67cb276a5a9d01f5fb4
+    "timestamp": 1405716701
   }
 }
