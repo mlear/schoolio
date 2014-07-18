@@ -1,0 +1,36 @@
+@import 'variables';
+
+/*
+Header
+*/
+
+header {
+
+  .brand {
+    padding: 2%;
+    color: $white;
+  }
+
+  nav {
+    padding: 2%;
+    li {
+      display: inline-block;
+      list-style: none
+    }
+  }
+
+  .btn {
+    color: $white;
+    border-color: $white;
+  }
+}
+
+/*
+Buttons/Links
+*/
+
+.btn {
+  border: 1px solid;
+  background: transparent;
+  padding: 1em;
+}
