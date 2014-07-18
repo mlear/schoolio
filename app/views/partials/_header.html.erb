@@ -1,0 +1,14 @@
+<header class="contain">
+  <h1 class="h3 brand pull-left">schoolio</h1>
+  <nav class="pull-right">
+    <li>
+      <button id="login" class="btn">log in</button>
+    </li>
+    <li>
+      <button id="signup" class="btn">sign up</button>
+    </li>
+    <li>
+      <%= button_to 'log out', signout_path, method: :delete, class: "btn" %>
+    </li>
+  </nav>
+</header>

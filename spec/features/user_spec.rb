@@ -4,6 +4,7 @@ system 'clear'
 
 describe 'User pages' do
   let(:user) { create :valid_user }
+  let(:invalid_user) { build :invalid_user }
   let(:new_user) { build :unsaved_user }
   let(:course) { create :course }
 
@@ -11,10 +12,11 @@ describe 'User pages' do
     before { visit root_path }
     subject { page }
 
-    it { should have_content 'Log In'}
-    it { should have_content 'Sign Up'}
+    it { should have_content 'log in'}
+    it { should have_content 'sign up'}
 
     describe 'when a user signs up' do
+      before { click_on 'sign up' }
       context 'with valid information' do
         it 'should redirect to user profile' do
           fill_in "First name",             with: new_user.first_name
@@ -49,7 +51,6 @@ describe 'User pages' do
       end
 
       describe 'with invalid information' do
-        let(:invalid_user) { build :invalid_user }
         it 'redirects to home page' do
           sign_in invalid_user
           expect(current_path).to eq(root_path)
@@ -104,7 +105,7 @@ describe 'User pages' do
     end
 
     it 'can update a user' do
-      fill_in 'Password',       with: user.password
+      fill_in 'password',       with: user.password
       click_on "update"
       expect(current_path).to eq(user_path(user))
     end
@@ -112,8 +113,8 @@ describe 'User pages' do
 
   def sign_in(user)
     visit root_path
-    fill_in "Login email",     with: user.email
-    fill_in "Login password",  with: user.password
+    fill_in "email",     with: user.email
+    fill_in "password",  with: user.password
     click_button "sign_in"
   end
 end
