@@ -2,13 +2,19 @@
   <h1 class="h3 brand pull-left">schoolio</h1>
   <nav class="pull-right">
     <li>
-      <button id="login" class="btn">log in</button>
+      <%= link_to 'about', 'https://github.com/zpfled/schoolio', method: :get, class: '' %>
     </li>
-    <li>
-      <button id="signup" class="btn">sign up</button>
-    </li>
-    <li>
-      <%= button_to 'log out', signout_path, method: :delete, class: "btn" %>
-    </li>
+    <% if signed_in? %>
+      <li>
+        <%= button_to 'log out', signout_path, method: :delete, class: "btn" %>
+      </li>
+    <% else %>
+      <li>
+        <button id="signup" class="signup btn">sign up</button>
+      </li>
+      <li>
+        <button id="login" class="login btn">log in</button>
+      </li>
+    <% end %>
   </nav>
 </header>
