@@ -86,7 +86,7 @@ let(:courses) { Course.all }
   	end
   end
 
-  pending 'going to the course edit page' do
+  describe 'going to the course edit page' do
 
   	it 'sees a form submit button' do
       visit edit_course_url(course)
