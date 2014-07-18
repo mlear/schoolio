@@ -8,3 +8,7 @@
 ## Schema
 
 ![schema](schema.png)
+
+## User Profile
+
+![dashboard](user_profile.png)
