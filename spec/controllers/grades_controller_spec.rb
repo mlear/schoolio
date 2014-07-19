@@ -42,13 +42,23 @@ RSpec.describe GradesController, :type => :controller do
   end
 
   # describe "chart" do
-  #   let(:student) { :valid_student } 
+  #   let(:student) { create :valid_student }
 
   #   context 'grades should have key course name' do 
   #     it 'should be able to post to chart' do 
+  #       sign_in(student)
+  #       # visit student_path(student)
+  #       save_and_open_page
   #       expect(post :chart).to be_ok
   #     end
   #   end
+  # end
+
+  # def sign_in(user)
+  #   visit root_path
+  #   fill_in "email",     with: user.email
+  #   fill_in "password",  with: user.password
+  #   click_button "sign_in"
   # end
 
 end
