@@ -34,13 +34,19 @@ class GradesController < ApplicationController
     redirect_to @grade
   end
 
-  def chart_info
-    new_grades = []
-    @student_grades = Grade.where(user_id: current_user)
+  def chart
+    @student_grades = Grade.where(student_id: current_student)
 
-    @student_grades.each do |grade|
-      new_grades << { course: grade.course.name, grade: grade.gpa }
+    grades = @student_grades.group_by do |grade|
+      grade.course.name
     end
+
+    new_grades = grades.select do |key, value|
+      value.map! do |grade|
+        grade.gpa
+      end
+    end
+
     render json: new_grades
 
   end

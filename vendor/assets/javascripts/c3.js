@@ -1561,9 +1561,6 @@
                 data = convertColumnsToData(new_rows);
             }
             return data;
-        }
-        function convertRowsToData(rows) {
-            var keys = rows[0], new_row = {}, new_rows = [], i, j;
             for (i = 1; i < rows.length; i++) {
                 new_row = {};
                 for (j = 0; j < rows[i].length; j++) {
