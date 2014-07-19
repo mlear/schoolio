@@ -33,7 +33,7 @@ class StudentsController < UsersController
 
   def update
     @user = Student.find(params[:id])
-    if signed_in?(@user)
+    if signed_in?
       @user.update(user_params)
       redirect_to student_path(@user)
     else

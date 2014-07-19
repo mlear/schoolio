@@ -31,7 +31,7 @@ class InstructorsController < UsersController
 
   def update
     @user = Instructor.find(params[:id])
-    if signed_in?(@user)
+    if signed_in?
       @user.update(user_params)
       redirect_to instructor_path(@user)
     else
