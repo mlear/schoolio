@@ -9,7 +9,7 @@ num = 0
 
 50.times {
 	num += 1
-	Grade.create(user_id: num, course_id: num, gpa: 3.5)
+	Grade.create(student_id: num, course_id: num, gpa: 3.5)
 }
 
 50.times {

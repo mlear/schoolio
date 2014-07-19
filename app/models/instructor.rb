@@ -1,5 +1,6 @@
 class Instructor < ActiveRecord::Base
   has_secure_password
+  mount_uploader :avatar, AvatarUploader
   has_many :grades
   has_many :courses
 

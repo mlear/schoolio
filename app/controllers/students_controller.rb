@@ -13,6 +13,7 @@ class StudentsController < UsersController
 
   def create
     @user = Student.new(user_params)
+
     if @user.valid?
       @user.save
       sign_in @user
@@ -60,7 +61,7 @@ class StudentsController < UsersController
   end
 
   def user_params
-    params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar)
   end
 
 
