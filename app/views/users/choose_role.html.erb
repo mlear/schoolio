@@ -18,8 +18,8 @@
     <%= f.hidden_field :first_name, value: params[:user][:first_name] %>
     <%= f.hidden_field :last_name, value: params[:user][:last_name] %>
     <%= f.hidden_field :email, value: params[:user][:email] %>
-    <%= f.password_field :password, value: params[:user][:password] %>
-    <%= f.password_field :password_confirmation, value: params[:user][:password_confirmation] %>
+    <%= f.password_field :password, value: params[:user][:password], class: 'hidden' %>
+    <%= f.password_field :password_confirmation, value: params[:user][:password_confirmation], class: 'hidden' %>
 
     <%= f.label :passcode %>
     <%= f.password_field :passcode %>
