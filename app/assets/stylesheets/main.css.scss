@@ -1,6 +1,23 @@
 @import 'variables';
 
 /*
+Forms
+*/
+
+::-webkit-input-placeholder {
+   color: $white;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: $white;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $white;
+}
+:-ms-input-placeholder {
+   color: $white;
+}
+
+/*
 Header
 */
 
@@ -68,10 +85,19 @@ Buttons/Links
   }
 }
 
+.btn-primary {
+  background-color: $primary-color;
+
+  &:hover {
+    background-color: rgba(160, 160, 255, .65);
+    color: $white;
+  }
+}
+
 .passcode {
   padding: .5em;
 
   &:hover {
-    background-color: git transparent;
+    background-color: transparent;
   }
 }

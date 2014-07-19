@@ -1,37 +1,42 @@
 <section class="contain bcg index">
   <div class="contain scrim black-scrim">
     <ul class='tag-container'>
-      <li>
-        <h2 class="h1 tag">are you a teacher or a student?</h2>
-      </li>
-      <li class="horizontal-form">
-        <%= form_for Student.new do |f| %>
+      <ul>
+        <li>
+          <h2 class="h1 tag">are you a teacher or a student?</h2>
+        </li>
+      </ul>
+      <ul class="inline">
+        <li>
+          <%= form_for Student.new do |f| %>
 
-          <%= f.hidden_field :first_name, value: params[:user][:first_name] %>
-          <%= f.hidden_field :last_name, value: params[:user][:last_name] %>
-          <%= f.hidden_field :email, value: params[:user][:email] %>
-          <%= f.password_field :password, value: params[:user][:password], class: 'hidden' %>
-          <%= f.password_field :password_confirmation, value: params[:user][:password_confirmation], class: 'hidden' %>
+            <%= f.hidden_field :first_name, value: params[:user][:first_name] %>
+            <%= f.hidden_field :last_name, value: params[:user][:last_name] %>
+            <%= f.hidden_field :email, value: params[:user][:email] %>
+            <%= f.password_field :password, value: params[:user][:password], class: 'hidden' %>
+            <%= f.password_field :password_confirmation, value: params[:user][:password_confirmation], class: 'hidden' %>
 
-          <%= f.submit :student, class: 'btn btn-big' %>
+            <%= f.submit :student, class: 'btn btn-big btn-secondary' %>
 
-        <% end %>
-      </li>
-      <li class="horizontal-form">
-        <%= form_for Instructor.new do |f| %>
+          <% end %>
+        </li>
+        <li>
+          <%= form_for Instructor.new do |f| %>
+          <%= f.submit :teacher, class: 'btn btn-big btn-primary' %>
+        </li>
 
-          <%= f.hidden_field :first_name, value: params[:user][:first_name] %>
-          <%= f.hidden_field :last_name, value: params[:user][:last_name] %>
-          <%= f.hidden_field :email, value: params[:user][:email] %>
-          <%= f.password_field :password, value: params[:user][:password], class: 'hidden' %>
-          <%= f.password_field :password_confirmation, value: params[:user][:password_confirmation], class: 'hidden' %>
+        <li>
+            <%= f.hidden_field :first_name, value: params[:user][:first_name] %>
+            <%= f.hidden_field :last_name, value: params[:user][:last_name] %>
+            <%= f.hidden_field :email, value: params[:user][:email] %>
+            <%= f.password_field :password, value: params[:user][:password], class: 'hidden' %>
+            <%= f.password_field :password_confirmation, value: params[:user][:password_confirmation], class: 'hidden' %>
 
-          <%= f.label :passcode, class: 'hidden' %>
-          <%= f.password_field :passcode, placeholder: 'passcode', class: 'btn btn-big passcode' %>
-      </li>
-      <li class="horizontal-form">
-        <%= f.submit :teacher, class: 'btn btn-big' %>
-      </li>
+            <%= f.label :passcode, class: 'hidden' %>
+            <%= f.password_field :passcode, placeholder: 'teacher passcode', class: 'btn btn-big' %>
+        </li>
+      </ul>
+    </ul>
 
         <% end %>
     </ul>

@@ -190,6 +190,14 @@ Spacing & Blocking
 .alt-col * {
   color: $alt-color;
 }
+
+.inline {
+  display: inline-block;
+
+  li {
+    display: inline-block;
+  }
+}
 /*
 .alt-col h1,
 .alt-col h2,
