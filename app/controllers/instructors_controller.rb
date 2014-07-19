@@ -10,8 +10,8 @@ class InstructorsController < UsersController
   end
 
   def create
-    @user = Instructor.new(user_params)
-    if @user.valid?
+    @user = Instructor.new(user_params) if params[:instructor][:passcode] == 'ineedanewjob'
+    if @user && @user.valid?
       @user.save
       sign_in @user
       redirect_to instructor_path(@user)
@@ -57,7 +57,7 @@ class InstructorsController < UsersController
   end
 
   def user_params
-    params.require(:instructor).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:instructor).permit(:first_name, :last_name, :email, :password, :password_confirmation, :passcode)
   end
 
 

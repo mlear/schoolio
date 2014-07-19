@@ -9,9 +9,6 @@
     <%= f.password_field :password, value: params[:user][:password], class: 'hidden' %>
     <%= f.password_field :password_confirmation, value: params[:user][:password_confirmation], class: 'hidden' %>
 
-    <%= f.label :passcode %>
-    <%= f.password_field :passcode %>
-
     <%= f.submit :student %>
 
   <% end %>
