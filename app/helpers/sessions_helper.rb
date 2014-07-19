@@ -2,7 +2,7 @@ module SessionsHelper
   attr_reader :current_user
 
   def sign_in(user)
-    session[:remember_token] = user.id
+    session[:remember_token] = "#{user.class.to_s.downcase}s/#{user.id}"
   end
 
   def sign_out
@@ -21,7 +21,7 @@ module SessionsHelper
     @current_user = Instructor.find(session[:remember_token])
   end
 
-  def signed_in?(user)
+  def signed_in?
     return false unless session[:remember_token]
     true
   end

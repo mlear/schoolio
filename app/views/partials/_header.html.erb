@@ -1,12 +1,12 @@
 <header class="contain">
-  <h1 class="h3 brand pull-left">schoolio</h1>
+  <h1 class="h3 brand pull-left"><%= link_to 'schoolio', root_path %></h1>
   <nav class="pull-right">
     <li>
       <%= link_to 'about', 'https://github.com/zpfled/schoolio', method: :get, class: '' %>
     </li>
-    <% if signed_in?(@user) %>
+    <% if signed_in? %>
       <li>
-        <%= link_to 'dashboard', @user %>
+        <%= link_to 'dashboard', "/#{session[:remember_token]}" %>
       </li>
       <% if @user %>
       <li>
