@@ -1,8 +1,8 @@
 <section class="dashboard">
   <sidebar>
-    <%= image_tag('default-student.jpg') %>
-    <h3><%= @user.first_name %></h3>
-    <ul>
+    <%= image_tag(('default-student.jpg'), class: 'avatar') %>
+    <h3 class="sidebar-name"><%= @user.first_name %></h3>
+    <ul class="profile content">
       <li>
         <p>name: <%= @user.name %></p>
       </li>
@@ -25,7 +25,6 @@
       </li>
       <% end %>
     </ul>
-
   </sidebar>
   <% @user.courses.each do |course| %>
     <li> <%= link_to course.name, course %></li>
