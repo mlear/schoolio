@@ -15,7 +15,6 @@ describe SessionsController do
 
     describe 'with valid information' do
       it 'should sign in a student' do
-        puts valid_student
         get :create, valid_student
         expect(session[:remember_token]).to_not be_blank
       end
@@ -27,12 +26,12 @@ describe SessionsController do
 
       it 'should redirect student to profile' do
         get :create, valid_student
-        expect(response.redirect_url).to include user_path(assigns :user)
+        expect(response.redirect_url).to include student_path(assigns :user)
       end
 
       it 'should redirect instructor to profile' do
         get :create, valid_instructor
-        expect(response.redirect_url).to include user_path(assigns :user)
+        expect(response.redirect_url).to include instructor_path(assigns :user)
       end
     end
 

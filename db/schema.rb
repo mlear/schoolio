@@ -26,12 +26,13 @@ ActiveRecord::Schema.define(version: 20140718221527) do
   create_table "courses", force: true do |t|
     t.string   "subject"
     t.string   "name"
+    t.integer  "instructor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "grades", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "student_id"
     t.integer  "course_id"
     t.float    "gpa"
     t.datetime "created_at"

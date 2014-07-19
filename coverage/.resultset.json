@@ -1,51 +1,57 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/home/ruby/schoolio/app/controllers/sessions_controller.rb": [
+      "/Users/apprentice/schoolio/app/models/behavior_trait.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/course.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/grade.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/interest.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/learning_style.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/student_behavior.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/student_interest.rb": [
         1,
         null,
-        1,
-        7,
-        7,
-        7,
-        5,
-        5,
-        3,
-        null,
-        2,
-        2,
-        2,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        2,
-        2,
-        2,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
         1,
         1,
         null,
         null
       ],
-      "/Users/home/ruby/schoolio/app/controllers/application_controller.rb": [
+      "/Users/apprentice/schoolio/app/models/wat.rb": [
         1,
-        null,
-        null,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1405780349
+    "timestamp": 1405782352
   }
 }

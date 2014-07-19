@@ -4,6 +4,9 @@ system 'clear'
 
 describe 'User pages' do
   let(:user) { create :valid_user }
+  let(:student) { create :valid_student }
+  let(:instructor) { create :valid_instructor }
+
   let(:invalid_user) { build :invalid_user }
   let(:new_user) { build :unsaved_user }
   let(:course) { create :course }
@@ -44,9 +47,14 @@ describe 'User pages' do
 
     describe 'when a user logs in' do
       context 'with valid information' do
-        it 'logs in a user and redirects to user profile' do
-          sign_in user
-          expect(current_path).to eq user_path user
+        it 'logs in a student and redirects to student profile' do
+          sign_in student
+          expect(current_path).to eq student_path student
+        end
+
+        it 'logs in a instructor and redirects to instructor profile' do
+          sign_in instructor
+          expect(current_path).to eq instructor_path instructor
         end
       end
 
