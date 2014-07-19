@@ -1,11 +1,11 @@
 $(document).ready(function() {
   var messages = $('messages');
-  $('#login').on('click', function(event) {
+  $('.login').on('click', function(event) {
     event.preventDefault();
     $('#login-form-modal').fadeToggle(400);
   })
 
-  $('#signup').on('click', function(event) {
+  $('.signup').on('click', function(event) {
     event.preventDefault();
     $('#signup-form-modal').fadeToggle(400);
   })
@@ -68,7 +68,7 @@ $(document).ready(function() {
   });
 
   $('.close').on('click', function() {
-    $('.modal').hide(400);
+    $('.modal').fadeOut(400);
   });
 
 });

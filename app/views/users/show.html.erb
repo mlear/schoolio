@@ -1,7 +1,7 @@
 
 <div id="chart"></div>
 <button>hi bud</button>
-<%= link_to 'settings', edit_user_path %>
+<%= link_to 'settings', ( @user.class == Student ? edit_student_path : edit_instructor_path ) %>
 <%= button_to 'Delete User', @user, method: :delete %>
 <%=@user.first_name%>
 <% @user.courses.each do |course| %>

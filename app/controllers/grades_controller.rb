@@ -1,5 +1,5 @@
 class GradesController < ApplicationController
-  
+
   def index
     @grades = Grade.all
   end
@@ -29,7 +29,7 @@ class GradesController < ApplicationController
 
   def destroy
     set_grade
-    @grade.destroy 
+    @grade.destroy
 
     redirect_to @grade
   end
@@ -53,7 +53,7 @@ class GradesController < ApplicationController
   private
 
     def grade_params
-      params.require(:grade).permit(:user_id, :course_id, :gpa)
+      params.require(:grade).permit(:student_id, :course_id, :gpa)
     end
-  
+
 end

@@ -1,0 +1,34 @@
+<section>
+  <h2>are you a teacher or a student?</h2>
+
+  <%= form_for Student.new do |f| %>
+
+    <%= f.hidden_field :first_name, value: params[:user][:first_name] %>
+    <%= f.hidden_field :last_name, value: params[:user][:last_name] %>
+    <%= f.hidden_field :email, value: params[:user][:email] %>
+    <%= f.password_field :password, value: params[:user][:password], class: 'hidden' %>
+    <%= f.password_field :password_confirmation, value: params[:user][:password_confirmation], class: 'hidden' %>
+
+    <%= f.label :passcode %>
+    <%= f.password_field :passcode %>
+
+    <%= f.submit :student %>
+
+  <% end %>
+
+  <%= form_for Instructor.new do |f| %>
+
+    <%= f.hidden_field :first_name, value: params[:user][:first_name] %>
+    <%= f.hidden_field :last_name, value: params[:user][:last_name] %>
+    <%= f.hidden_field :email, value: params[:user][:email] %>
+    <%= f.password_field :password, value: params[:user][:password] %>
+    <%= f.password_field :password_confirmation, value: params[:user][:password_confirmation] %>
+
+    <%= f.label :passcode %>
+    <%= f.password_field :passcode %>
+
+    <%= f.submit :teacher %>
+
+  <% end %>
+
+</section>

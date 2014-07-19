@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Course do
 	let(:course) {Course.create(subject: 'Physics', name: 'Science')}
-	
+
 	describe 'check attributes for courses' do
 
 		it 'should check to see if the subject is there' do
@@ -15,11 +15,11 @@ describe Course do
 	end
 
 	describe 'associations should be' do
-		it 'should have many grades' do 
+		it 'should have many grades' do
 			expect(course).to have_many(:grades)
 		end
-		it 'should have many users through grades' do 
-			expect(course).to have_many(:users)
+		it 'should have many students through grades' do
+			expect(course).to have_many(:students)
 		end
 	end
 end

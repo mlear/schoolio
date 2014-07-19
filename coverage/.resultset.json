@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/courses_controller.rb": [
+=======
+      "/Users/apprentice/schoolio/app/controllers/courses_controller.rb": [
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
         null,
         1,
@@ -18,7 +22,7 @@
         null,
         null,
         1,
-        9,
+        10,
         null,
         null,
         1,
@@ -39,7 +43,7 @@
         null,
         null,
         1,
-        17,
+        18,
         null,
         null,
         1,
@@ -49,7 +53,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/application_controller.rb": [
+=======
+      "/Users/apprentice/schoolio/app/controllers/application_controller.rb": [
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
         null,
         null,
@@ -57,7 +65,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/grades_controller.rb": [
+=======
+      "/Users/apprentice/schoolio/app/controllers/grades_controller.rb": [
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
         null,
         1,
@@ -118,148 +130,401 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/sessions_controller.rb": [
+=======
+      "/Users/apprentice/schoolio/app/controllers/sessions_controller.rb": [
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
-        1,
-        15,
-        15,
-        12,
-        12,
-        null,
-        3,
-        3,
-        null,
-        null,
         null,
         1,
-        2,
-        2,
+        32,
+        32,
+        32,
+        14,
+        14,
+        4,
         null,
+        10,
+        10,
+        10,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+<<<<<<< HEAD
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/controllers/users_controller.rb": [
+=======
+      "/Users/apprentice/schoolio/app/controllers/users_controller.rb": [
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
         1,
         21,
+=======
+        18,
+        18,
+        18,
+        null,
+>>>>>>> wat
         0,
         0,
         null,
-        21,
         null,
         null,
         null,
         1,
         9,
         9,
-        4,
-        4,
-        4,
-        null,
-        5,
-        null,
-        null,
-        null,
-        1,
-        12,
-        null,
-        null,
-        1,
-        4,
-        4,
-        null,
-        null,
-        1,
-        3,
-        3,
-        2,
-        2,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
-        null,
-        null,
-        1,
-        null,
-        1,
-        16,
-        16,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        11,
         null,
         null
       ],
+      "/Users/apprentice/schoolio/app/models/behavior_trait.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/course.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/grade.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/interest.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/learning_style.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/student_behavior.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/student_interest.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/models/wat.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/schoolio/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        3,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/behavior_trait.rb": [
+=======
+<<<<<<< HEAD
+      "/Users/apprentice/schoolio/app/models/behavior_trait.rb": [
+=======
+      "/Users/apprentice/schoolio/app/controllers/students_controller.rb": [
+>>>>>>> wat
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
+        null,
         1,
+        null,
         1,
+<<<<<<< HEAD
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/course.rb": [
+=======
+      "/Users/apprentice/schoolio/app/models/course.rb": [
+=======
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+>>>>>>> wat
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
+        1,
+        2,
+        2,
         1,
         1,
-        1,
+<<<<<<< HEAD
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/grade.rb": [
+=======
+      "/Users/apprentice/schoolio/app/models/grade.rb": [
+=======
+>>>>>>> wat
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
+        null,
         1,
+        null,
+        null,
+        null,
         1,
+<<<<<<< HEAD
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/instructor.rb": [
+=======
+      "/Users/apprentice/schoolio/app/models/instructor.rb": [
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/interest.rb": [
+=======
+      "/Users/apprentice/schoolio/app/models/interest.rb": [
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/learning_style.rb": [
+=======
+      "/Users/apprentice/schoolio/app/models/learning_style.rb": [
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/student_behavior.rb": [
+=======
+      "/Users/apprentice/schoolio/app/models/student_behavior.rb": [
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/student_interest.rb": [
+=======
+      "/Users/apprentice/schoolio/app/models/student_interest.rb": [
+=======
+        18,
+        null,
+        null,
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
+        10,
+        10,
+        null,
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+>>>>>>> wat
+        1,
+        null,
+        1,
+        28,
+        28,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        3,
+        null,
+        null,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/Schoolio/app/models/student.rb": [
+=======
+<<<<<<< HEAD
+      "/Users/apprentice/schoolio/app/models/student.rb": [
+=======
+      "/Users/apprentice/schoolio/app/controllers/instructors_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
         1,
         1,
         1,
         1,
         1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        10,
+        null,
+        null,
+        1,
+        3,
+        3,
+        null,
+        null,
+        1,
+        1,
+>>>>>>> wat
         1,
         1,
         1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        13,
+        13,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1405716701
+=======
+<<<<<<< HEAD
+    "timestamp": 1405718075
+=======
+    "timestamp": 1405788615
+>>>>>>> wat
+>>>>>>> e0a0831018482b621775c0a9ae561066508a01bc
   }
 }
