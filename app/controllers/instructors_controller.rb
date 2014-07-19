@@ -58,6 +58,13 @@ class InstructorsController < UsersController
     render "editmystudent"
   end
 
+  def add_instructor_course
+    @user = Instructor.find(params[:id])
+    course_id = params[:grade][:course_id]
+    Course.update(course_id, instructor_id: @user.id)
+    redirect_to @user
+  end
+
   private
 
   def assign_user
