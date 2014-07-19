@@ -1,4 +1,5 @@
 class Instructor < ActiveRecord::Base
+  include UsersHelper
   has_secure_password
   has_many :grades
   has_many :courses

@@ -1,4 +1,5 @@
 class Student < ActiveRecord::Base
+  include UsersHelper
   has_secure_password
   has_many :grades
   has_many :courses, through: :grades
@@ -13,24 +14,4 @@ class Student < ActiveRecord::Base
 	has_many :behavior_traits, through: :student_behaviors
 	has_many :student_interests
 	has_many :interests, through: :student_interests
-
-  def name
-    "#{first_name} #{last_name}"
-  end
-
-  def behavior_profile
-    output = ""
-    student_behaviors.each do |behavior|
-      output << "#{behavior.capitalize}, "
-    end
-    output[0..-2]
-  end
-
-  def interest_profile
-    output = ""
-    interests.each do |interest|
-      output << "#{interest.capitalize}, "
-    end
-    output[0..-2]
-  end
 end
