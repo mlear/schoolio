@@ -1,6 +1,17 @@
 @import 'variables';
 
 /*
+Forms
+*/
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+   color: $white;
+}
+
+/*
 Header
 */
 
@@ -19,6 +30,7 @@ header {
   nav {
     padding: 2%;
     li {
+      margin: 0 1em;
       display: inline-block;
       list-style: none
     }
@@ -57,12 +69,30 @@ Buttons/Links
   font-family: $serif-font;
   padding: .75em 1.5em;
   font-size: 2em;
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+
   &:hover {
     background-color: rgba(255, 160, 160, .65);
     color: $white;
   }
 }
 
-.btn-secondary {
-  background-color: $secondary-color;
+.btn-primary {
+  background-color: $primary-color;
+
+  &:hover {
+    background-color: rgba(160, 160, 255, .65);
+    color: $white;
+  }
+}
+
+.passcode {
+  padding: .5em;
+
+  &:hover {
+    background-color: transparent;
+  }
 }

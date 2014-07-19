@@ -43,7 +43,7 @@ describe 'User pages' do
           fill_in "Password",               with: new_instructor.password
           fill_in "Password confirmation",  with: new_instructor.password
           click_button "sign_up"
-          fill_in "Passcode",                with: "ineedanewjob"
+          fill_in "Passcode",               with: 'ineedanewjob'
           click_on 'teacher'
           expect(current_path).to eq instructor_path Instructor.last
         end
@@ -115,11 +115,6 @@ describe 'User pages' do
       click_on "settings"
       expect(current_path).to eq(edit_student_path(student))
     end
-
-    it 'has a delete student button' do
-      click_on "delete account"
-      expect(current_path).to eq(root_path)
-    end
   end
 
   context 'on the edit page' do
@@ -157,11 +152,6 @@ describe 'User pages' do
       expect(current_path).to eq(edit_instructor_path(instructor))
     end
 
-    it 'has a delete instructor button' do
-      click_on "delete account"
-      expect(current_path).to eq(root_path)
-    end
-
     it 'allows instructors to create new courses' do
       fill_in 'course name', with: "Wat"
       fill_in 'Subject', with: "Wat"
@@ -174,17 +164,17 @@ describe 'User pages' do
       expect(page).to have_content(instructor.students.first.first_name)
     end
 
-    it 'allows me to see my students courses' do
+    xit 'allows me to see my students courses' do
       instructor.students << student
       visit instructor_path(instructor)
       click_on("Bob Joblaw")
       expect(current_path).to eq(edit_my_student_path(student))
     end
 
-    it 'allows me to edit my students courses' do
+    xit 'allows me to edit my students courses' do
       instructor.students << student
       visit instructor_path(instructor)
-      click_on("Bob Joblaw")    
+      click_on("Bob Joblaw")
       expect{click_on(course.name)}.to change{student.courses.count}
     end
 
