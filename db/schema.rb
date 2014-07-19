@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140718221527) do
   create_table "grades", force: true do |t|
     t.integer  "student_id"
     t.integer  "course_id"
-    t.decimal  "gpa"
+    t.float    "gpa"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,7 +95,6 @@ ActiveRecord::Schema.define(version: 20140718221527) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -103,7 +102,6 @@ ActiveRecord::Schema.define(version: 20140718221527) do
   create_table "wats", force: true do |t|
     t.integer  "student_id"
     t.integer  "instructor_id"
-
     t.datetime "created_at"
     t.datetime "updated_at"
   end
