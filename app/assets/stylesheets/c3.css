@@ -1,5 +1,19 @@
 /*-- Chart --*/
 
+
+
+#student-chart {
+  padding-top: 15%;
+  margin-left: 30%;
+  margin-right: 20%;
+} 
+
+
+
+#chart .c3-line {
+  stroke-width: 3px;
+}
+
 .c3 svg {
   font: 10px sans-serif;
 }

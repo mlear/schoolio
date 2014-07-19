@@ -6,7 +6,7 @@ $(document).ready(function(){
 			    data: {			
 			    	json: GPAs	
 			    },
-			    size: { width: 600, height: 300 },
+			    // size: { width: 600, height: 300 },
 			    axis: { 
 			    		y: { label: "GPA" },
 			    		x: { label: "Progress Report" }
