@@ -1,0 +1,6 @@
+<%= link_to 'settings', edit_student_path %>
+<%= button_to 'delete account', @user, method: :delete %>
+<%=@user.first_name%>
+<% @user.courses.each do |course| %>
+  <li> <%= link_to course.name, course %></li>
+<%end%>

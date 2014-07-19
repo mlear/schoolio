@@ -1,17 +1,16 @@
 require 'rails_helper'
 
-describe User do
+describe Student do
 
-  let(:user) { create :valid_user }
+  let(:student) { create :valid_student }
   let(:course) { create :course }
 
   it 'has many courses' do
-    user.courses << course
-    expect(user.courses.first).to be_a Course
+    student.courses << course
+    expect(student.courses.first).to be_a Course
   end
 
   it {should have_many(:courses)}
   it {should have_many(:grades)}
-  it {should belong_to(:role)}
 
 end
