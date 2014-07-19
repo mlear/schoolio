@@ -41,4 +41,14 @@ RSpec.describe GradesController, :type => :controller do
     end
   end
 
+  # describe "chart" do
+  #   let(:student) { :valid_student } 
+
+  #   context 'grades should have key course name' do 
+  #     it 'should be able to post to chart' do 
+  #       expect(post :chart).to be_ok
+  #     end
+  #   end
+  # end
+
 end

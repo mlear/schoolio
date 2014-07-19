@@ -1,9 +1,9 @@
 
-<div id="chart"></div>
 <section class="dashboard">
   <%=@user.first_name%>
   <% @user.courses.each do |course| %>
     <li> <%= link_to course.name, course %></li>
   <%end%>
 </section>
+<div id="chart"></div>
 

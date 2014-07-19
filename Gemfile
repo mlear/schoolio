@@ -36,6 +36,7 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'byebug'
+  gem 'jasmine'
 end
 
 group :test do
