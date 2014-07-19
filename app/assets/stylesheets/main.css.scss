@@ -57,12 +57,21 @@ Buttons/Links
   font-family: $serif-font;
   padding: .75em 1.5em;
   font-size: 2em;
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+
   &:hover {
     background-color: rgba(255, 160, 160, .65);
     color: $white;
   }
 }
 
-.btn-secondary {
-  background-color: $secondary-color;
+.passcode {
+  padding: .5em;
+
+  &:hover {
+    background-color: git transparent;
+  }
 }

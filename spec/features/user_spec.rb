@@ -43,6 +43,7 @@ describe 'User pages' do
           fill_in "Password",               with: new_instructor.password
           fill_in "Password confirmation",  with: new_instructor.password
           click_button "sign_up"
+          fill_in "Passcode",               with: 'ineedanewjob'
           click_on 'teacher'
           expect(current_path).to eq instructor_path Instructor.last
         end
