@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/schoolio/app/controllers/sessions_controller.rb": [
+      "/Users/home/ruby/schoolio/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -37,7 +37,7 @@
         null,
         null
       ],
-      "/Users/apprentice/schoolio/app/controllers/application_controller.rb": [
+      "/Users/home/ruby/schoolio/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -46,6 +46,6 @@
         null
       ]
     },
-    "timestamp": 1405779110
+    "timestamp": 1405780349
   }
 }
