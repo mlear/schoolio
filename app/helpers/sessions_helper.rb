@@ -23,6 +23,6 @@ module SessionsHelper
 
   def signed_in?(user)
     return false unless session[:remember_token]
-    user != nil
+    true
   end
 end

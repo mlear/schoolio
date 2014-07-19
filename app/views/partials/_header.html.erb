@@ -8,9 +8,11 @@
       <li>
         <%= link_to 'dashboard', @user %>
       </li>
+      <% if @user %>
       <li>
         <%= link_to 'settings', ( @user.class == Student ? edit_student_path : edit_instructor_path ) %>
       </li>
+      <% end %>
       <li>
         <%= button_to 'log out', signout_path, method: :delete, class: "btn" %>
       </li>
