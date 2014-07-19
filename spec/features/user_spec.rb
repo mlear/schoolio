@@ -86,60 +86,106 @@ describe 'User pages' do
     describe 'when a user logs out' do
 
       it 'logs out user and redirects' do
-        sign_in user
+        sign_in student
         click_button "log out"
         expect(current_path).to eq(root_path)
       end
     end
   end
 
-  context 'on the user page' do
+  context 'on the student page' do
 
-    before { user.courses << course; sign_in user }
+    before { student.courses << course; sign_in student }
 
-    it 'greets the user by name' do
-      expect(page).to have_content user.first_name
+    it 'greets the student by name' do
+      expect(page).to have_content student.first_name
     end
 
-    it 'displays the list of the users courses' do
-      expect(page).to have_content(user.courses.first.name)
+    it 'displays the list of the students courses' do
+      expect(page).to have_content(student.courses.first.name)
     end
 
-    it 'has links to the users courses' do
+    it 'has links to the students courses' do
       click_on "Musicology 101"
       expect(current_path).to eq(course_path(course))
     end
 
-    it 'has a user settings button' do
+    it 'has a student settings button' do
       click_on "settings"
-      expect(current_path).to eq(edit_user_path(user))
+      expect(current_path).to eq(edit_student_path(student))
     end
 
-    it 'has a delete user button' do
-      click_on "Delete User"
+    it 'has a delete student button' do
+      click_on "delete account"
+      expect(current_path).to eq(root_path)
+    end
+  end
+
+  context 'on the edit page' do
+    before { sign_in(student); visit edit_student_path(student) }
+
+    it 'has a form field' do
+      expect(page).to have_content(student.first_name)
+    end
+
+    it 'can update a student' do
+      fill_in 'password',       with: student.password
+      click_on "update"
+      expect(current_path).to eq(student_path(student))
+    end
+
+    context 'on the instructor page' do
+
+    before { sign_out; instructor.courses << course; sign_in instructor }
+
+    it 'greets the instructor by name' do
+      expect(page).to have_content instructor.first_name
+    end
+
+    it 'displays the list of the instructors courses' do
+      expect(page).to have_content(instructor.courses.first.name)
+    end
+
+    it 'has links to the instructors courses' do
+      click_on "Musicology 101"
+      expect(current_path).to eq(course_path(course))
+    end
+
+    it 'has a instructor settings button' do
+      click_on "settings"
+      expect(current_path).to eq(edit_instructor_path(instructor))
+    end
+
+    it 'has a delete instructor button' do
+      click_on "delete account"
       expect(current_path).to eq(root_path)
     end
   end
 
 
   context 'on the edit page' do
-    before { sign_in(user); visit edit_user_path(user) }
+    before { sign_out; sign_in(instructor); visit edit_instructor_path(instructor) }
 
     it 'has a form field' do
-      expect(page).to have_content(user.first_name)
+      expect(page).to have_content(instructor.first_name)
     end
 
-    it 'can update a user' do
-      fill_in 'password',       with: user.password
+    it 'can update a instructor' do
+      fill_in 'password',       with: instructor.password
       click_on "update"
-      expect(current_path).to eq(user_path(user))
+      expect(current_path).to eq(instructor_path(instructor))
     end
   end
+end
 
   def sign_in(user)
     visit root_path
     fill_in "email",     with: user.email
     fill_in "password",  with: user.password
     click_button "sign_in"
+  end
+
+  def sign_out
+    click_on 'log out'
   end
 end

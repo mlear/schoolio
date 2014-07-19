@@ -2,7 +2,7 @@ class InstructorsController < UsersController
 
 	def index
     if session[:remember_token] != nil
-      @user = current_user
+      @user = current_instructor
       redirect_to @user
     else
       render 'index'
@@ -31,7 +31,7 @@ class InstructorsController < UsersController
 
   def update
     @user = Instructor.find(params[:id])
-    if signed_in?
+    if signed_in?(@user)
       @user.update(user_params)
       redirect_to instructor_path(@user)
     else
@@ -40,7 +40,7 @@ class InstructorsController < UsersController
   end
 
   def destroy
-    @user = current_user
+    @user = current_instructor
     Instructor.destroy(@user.id)
     sign_out
     redirect_to root_path
@@ -52,7 +52,7 @@ class InstructorsController < UsersController
     if params[:id]
       @user = Instructor.find params[:id]
     else
-      @user = current_user
+      @user = current_instructor
     end
   end
 

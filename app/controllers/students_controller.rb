@@ -4,7 +4,7 @@ class StudentsController < UsersController
 
 	def index
     if session[:remember_token] != nil
-      @user = current_user
+      @user = current_student
       redirect_to @user
     else
       render 'index'
@@ -33,16 +33,17 @@ class StudentsController < UsersController
 
   def update
     @user = Student.find(params[:id])
-    if signed_in?
+    if signed_in?(@user)
       @user.update(user_params)
       redirect_to student_path(@user)
     else
+      p 'wrong branch!'
       redirect_to 'edit'
     end
   end
 
   def destroy
-    @user = current_user
+    @user = current_student
     Student.destroy(@user.id)
     sign_out
     redirect_to root_path
@@ -54,7 +55,7 @@ class StudentsController < UsersController
     if params[:id]
       @user = Student.find params[:id]
     else
-      @user = current_user
+      @user = current_student
     end
   end
 
