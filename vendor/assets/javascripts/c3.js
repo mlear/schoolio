@@ -1574,28 +1574,16 @@
             return new_rows;
         }
         function convertColumnsToData(columns) {
-            var new_rows = [], i, j, key;  
+            var new_rows = [], i, j, key;
             for (i = 0; i < columns.length; i++) {
-                if (true){ 
-                    key = columns[i].course; 
-                    for (j = 0; j < columns[i].scores.length; j++) {
-                        if (isUndefined(new_rows[j])) {
-                            new_rows[j] = {};
-                        }
+                key = columns[i][0];
+                for (j = 1; j < columns[i].length; j++) {
+                    if (isUndefined(new_rows[j - 1])) {
+                        new_rows[j - 1] = {};
                     }
-                    new_rows[j - 1][key] = columns[i].scores[j];
-                    // AM PASSING BACK RIGHT NUMBER OF OBJECTS NEED VALUES
-                } // } else if (columns[i].typeof === "array") {
-                //    key = columns[i][0]; 
-                
-                //     for (j = 1; j < columns[i].length; j++) {
-                //     if (isUndefined(new_rows[j - 1])) {
-                //         new_rows[j - 1] = {};
-                //     }
-                //     new_rows[j - 1][key] = columns[i][j];
-                // } }
+                    new_rows[j - 1][key] = columns[i][j];
+                }
             }
-            console.log(new_rows)
             return new_rows;
         }
         function convertDataToTargets(data, appendXs) {
