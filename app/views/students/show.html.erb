@@ -1,4 +1,7 @@
 <section class="dashboard">
+  <sidebar>
+    <%= image_tag('default-student.jpg') %>
+  </sidebar>
   <%=@user.first_name%>
   <% @user.courses.each do |course| %>
     <li> <%= link_to course.name, course %></li>
