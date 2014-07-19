@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe LearningStyle do
+describe LearningStyle do
 
 	it {should have_many(:students)}
 
