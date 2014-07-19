@@ -43,11 +43,7 @@ describe 'User pages' do
           fill_in "Password",               with: new_instructor.password
           fill_in "Password confirmation",  with: new_instructor.password
           click_button "sign_up"
-<<<<<<< HEAD
-          fill_in "Passcode",               with: 'ineedanewjob'
-=======
-          fill_in "Passcode",                with: "ineedanewjob"
->>>>>>> wat
+          fill_in "Teacher passcode",               with: 'ineedanewjob'
           click_on 'teacher'
           expect(current_path).to eq instructor_path Instructor.last
         end
@@ -188,7 +184,7 @@ describe 'User pages' do
     it 'allows me to edit my students courses' do
       instructor.students << student
       visit instructor_path(instructor)
-      click_on("Bob Joblaw")    
+      click_on("Bob Joblaw")
       expect{click_on(course.name)}.to change{student.courses.count}
     end
 
