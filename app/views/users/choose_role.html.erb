@@ -20,8 +20,8 @@
 
           <% end %>
         </li>
+        <%= form_for Instructor.new do |f| %>
         <li>
-          <%= form_for Instructor.new do |f| %>
           <%= f.submit :teacher, class: 'btn btn-big btn-primary' %>
         </li>
 
@@ -35,10 +35,10 @@
             <%= f.label :passcode, class: 'hidden' %>
             <%= f.password_field :passcode, placeholder: 'teacher passcode', class: 'btn btn-big' %>
         </li>
+        <% end %>
       </ul>
     </ul>
 
-        <% end %>
     </ul>
   </div>
 </section>

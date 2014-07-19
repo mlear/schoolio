@@ -1,6 +1,32 @@
 
 <section class="dashboard">
-  <%=@user.first_name%>
+  <sidebar>
+    <%= image_tag(('default-student.jpg'), class: 'avatar') %>
+    <h3 class="sidebar-name"><%= @user.first_name %></h3>
+    <ul class="profile content">
+      <li>
+        <p>name: <%= @user.name %></p>
+      </li>
+      <li>
+        <p>email: <%= @user.email %></p>
+      </li>
+      <% if @user.learning_style %>
+      <li>
+        <p>learning style: <%= @user.learning_style %></p>
+      </li>
+      <% end %>
+      <% if @user.student_behaviors.length > 0 %>
+      <li>
+        <p>behavior profile: <%= @user.behavior_profile %></p>
+      </li>
+      <% end %>
+      <% if @user.interests.length > 0 %>
+      <li>
+        <p>interests: <%= @user.interest_profile %></p>
+      </li>
+      <% end %>
+    </ul>
+  </sidebar>
   <% @user.courses.each do |course| %>
     <li> <%= link_to course.name, course %></li>
   <%end%>

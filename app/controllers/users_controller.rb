@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   def index
-    if session[:remember_token] != nil
-      @user = current_user
-      redirect_to @user
-    else
-      render 'index'
-    end
+    render 'index'
   end
 
   def create
