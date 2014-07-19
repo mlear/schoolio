@@ -10,11 +10,11 @@ class StudentsController < UsersController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = Student.new(user_params)
     if @user.valid?
       @user.save
       sign_in @user
-      redirect_to @user
+      redirect_to user_path(@user)
     else
       redirect_to root_path
     end
@@ -30,10 +30,10 @@ class StudentsController < UsersController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = Student.find(params[:id])
     if signed_in?
       @user.update(user_params)
-      redirect_to user_path(@user)
+      redirect_to student_path(@user)
     else
       redirect_to 'edit'
     end
@@ -41,7 +41,7 @@ class StudentsController < UsersController
 
   def destroy
     @user = current_user
-    User.destroy(@user.id)
+    Student.destroy(@user.id)
     sign_out
     redirect_to root_path
   end
@@ -50,7 +50,7 @@ class StudentsController < UsersController
 
   def assign_user
     if params[:id]
-      @user = User.find params[:id]
+      @user = Student.find params[:id]
     else
       @user = current_user
     end
