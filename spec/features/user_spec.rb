@@ -189,9 +189,13 @@ describe 'User pages' do
     end
 
     xit 'allows me to edit my students grades' do
+      instructor.students << student
+      visit instructor_path(instructor)
+      click_on("Bob Joblaw") 
     end
 
     xit 'allows me to edit my courses'do
+      
     end
 
   end
