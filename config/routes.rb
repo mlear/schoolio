@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :instructors
 
   get '/dashboard' => 'users#show'
+  match 'instructors/edit_my_student/:id', to: 'instructors#editmystudent', as: :edit_my_student, via: 'get'
+  match 'instructors/edit_my_student/:id', to: 'instructors#addstudentcourse', as: :addstudentcourse, via: 'get'
+
 
   root 'users#index'
 
