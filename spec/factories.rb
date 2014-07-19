@@ -4,6 +4,7 @@ FactoryGirl.define do
     last_name "Knope"
     email "waffles@whipped_cream.yum"
     password "foobar"
+    password_confirmation "foobar"
   end
 
   factory :valid_user, class: User do

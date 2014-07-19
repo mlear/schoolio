@@ -3,12 +3,16 @@ require 'rails_helper'
 system 'clear'
 
 describe 'User pages' do
-  let(:user) { create :valid_user }
+  # let(:user) { create :valid_user }
   let(:student) { create :valid_student }
   let(:instructor) { create :valid_instructor }
 
   let(:invalid_user) { build :invalid_user }
-  let(:new_user) { build :unsaved_user }
+  let(:new_student) { build :valid_student }
+
+  let(:duplicate) { build :unsaved_user }
+
+  let(:new_instructor) { build :valid_instructor }
   let(:course) { create :course }
 
   context 'on the homepage' do
@@ -21,25 +25,38 @@ describe 'User pages' do
     describe 'when a user signs up' do
       before { click_on 'sign up' }
       context 'with valid information' do
-        it 'should redirect to user profile' do
-          fill_in "First name",             with: new_user.first_name
-          fill_in "Last name",              with: new_user.last_name
-          fill_in "Email",                  with: new_user.email
-          fill_in "Password",               with: new_user.password
-          fill_in "Password confirmation",  with: new_user.password
+        it 'should redirect to student profile' do
+          fill_in "First name",             with: new_student.first_name
+          fill_in "Last name",              with: new_student.last_name
+          fill_in "Email",                  with: new_student.email
+          fill_in "Password",               with: new_student.password
+          fill_in "Password confirmation",  with: new_student.password
           click_button "sign_up"
-          expect(current_path).to eq user_path User.last
+          click_on 'student'
+          expect(current_path).to eq student_path Student.last
+        end
+
+        it 'should redirect to instructor profile' do
+          fill_in "First name",             with: new_instructor.first_name
+          fill_in "Last name",              with: new_instructor.last_name
+          fill_in "Email",                  with: new_instructor.email
+          fill_in "Password",               with: new_instructor.password
+          fill_in "Password confirmation",  with: new_instructor.password
+          click_button "sign_up"
+          click_on 'teacher'
+          expect(current_path).to eq instructor_path Instructor.last
         end
       end
 
       context 'with invalid information' do
         it 'should redirect to root' do
-          fill_in "First name",             with: new_user.first_name
-          fill_in "Last name",              with: new_user.last_name
-          fill_in "Email",                  with: user.email
-          fill_in "Password",               with: new_user.password
-          fill_in "Password confirmation",  with: new_user.password
+          fill_in "First name",             with: duplicate.first_name
+          fill_in "Last name",              with: duplicate.last_name
+          fill_in "Email",                  with: student.email
+          fill_in "Password",               with: duplicate.password
+          fill_in "Password confirmation",  with: duplicate.password
           click_button "sign_up"
+          click_on 'student'
           expect(current_path).to eq(root_path)
         end
       end

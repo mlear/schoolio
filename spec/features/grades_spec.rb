@@ -5,7 +5,7 @@ describe 'Grades' do
     Course.create(name: 'Science', subject: 'Physics')
   end
 
-  let!(:grade) { Grade.create!(user_id: 1, course_id: course.id, gpa: 3.5) }
+  let!(:grade) { Grade.create!(student_id: 1, course_id: course.id, gpa: 3.5) }
   let(:grades) { Grade.all }
   let(:course) { Course.create!(name: 'Math', subject: 'Algebra') }
 

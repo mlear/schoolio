@@ -1,3 +1,5 @@
+require 'cgi'
+
 class StudentsController < UsersController
 
 	def index
@@ -14,7 +16,7 @@ class StudentsController < UsersController
     if @user.valid?
       @user.save
       sign_in @user
-      redirect_to user_path(@user)
+      redirect_to student_path(@user)
     else
       redirect_to root_path
     end
@@ -57,7 +59,7 @@ class StudentsController < UsersController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
 

@@ -9,14 +9,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.valid?
-      @user.save
-      sign_in @user
-      redirect_to @user
-    else
-      redirect_to root_path
-    end
+    render 'choose_role', params: params
+    # @user = User.new(user_params)
+    # if @user.valid?
+    #   @user.save
+    #   sign_in @user
+    #   redirect_to @user
+    # else
+    #   redirect_to root_path
+    # end
   end
 
   def show
