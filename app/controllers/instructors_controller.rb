@@ -10,8 +10,8 @@ class InstructorsController < UsersController
   end
 
   def create
-    @user = Instructor.new(user_params)
-    if @user.valid?
+    @user = Instructor.new(user_params) if params[:instructor][:passcode] == 'ineedanewjob'
+    if @user && @user.valid?
       @user.save
       sign_in @user
       redirect_to instructor_path(@user)
@@ -31,7 +31,7 @@ class InstructorsController < UsersController
 
   def update
     @user = Instructor.find(params[:id])
-    if signed_in?(@user)
+    if signed_in?
       @user.update(user_params)
       redirect_to instructor_path(@user)
     else
@@ -46,6 +46,25 @@ class InstructorsController < UsersController
     redirect_to root_path
   end
 
+  def editmystudent
+    @user = Student.find(params[:id])
+    @courses = Course.all
+    render "editmystudent"
+  end
+
+  def addstudentcourse
+    @user = Student.find(params[:id])
+    Grade.create(course_params)
+    render "editmystudent"
+  end
+
+  def add_instructor_course
+    @user = Instructor.find(params[:id])
+    course_id = params[:grade][:course_id]
+    Course.update(course_id, instructor_id: @user.id)
+    redirect_to @user
+  end
+
   private
 
   def assign_user
@@ -58,6 +77,10 @@ class InstructorsController < UsersController
 
   def user_params
     params.require(:instructor).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar)
+  end
+
+  def course_params
+    params.require(:grade).permit(:student_id, :course_id)
   end
 
 

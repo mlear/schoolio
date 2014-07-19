@@ -13,12 +13,12 @@
         null,
         null,
         1,
-        2,
-        2,
+        3,
+        3,
         null,
         null,
         1,
-        10,
+        11,
         null,
         null,
         1,
@@ -39,13 +39,13 @@
         null,
         null,
         1,
-        18,
+        19,
         null,
         null,
         1,
         null,
         1,
-        4,
+        5,
         null,
         null
       ],
@@ -95,7 +95,25 @@
         null,
         null,
         1,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
         10,
+        null,
         null,
         null,
         1,
@@ -110,35 +128,26 @@
         1,
         null,
         1,
-        32,
-        32,
-        32,
-        14,
-        14,
+        33,
+        33,
+        33,
+        15,
+        15,
         4,
         null,
-        10,
-        10,
-        10,
+        11,
+        11,
+        11,
         null,
         0,
         0,
         null,
         null,
         null,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/apprentice/schoolio/app/controllers/users_controller.rb": [
-        1,
-        1,
-        21,
-=======
         18,
         18,
         18,
         null,
->>>>>>> wat
         0,
         0,
         null,
@@ -146,8 +155,8 @@
         null,
         null,
         1,
-        9,
-        9,
+        10,
+        10,
         null,
         null
       ],
@@ -204,26 +213,13 @@
       "/Users/apprentice/schoolio/app/controllers/users_controller.rb": [
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        46,
         null,
         null,
         1,
         3,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
         0,
         null,
@@ -265,21 +261,12 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/apprentice/schoolio/app/models/behavior_trait.rb": [
-=======
       "/Users/apprentice/schoolio/app/controllers/students_controller.rb": [
->>>>>>> wat
         1,
         null,
         1,
         null,
         1,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/apprentice/schoolio/app/models/course.rb": [
-=======
         0,
         0,
         0,
@@ -288,18 +275,11 @@
         null,
         null,
         null,
->>>>>>> wat
         1,
         2,
         2,
         1,
         1,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/apprentice/schoolio/app/models/grade.rb": [
-=======
->>>>>>> wat
         1,
         null,
         1,
@@ -307,39 +287,12 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/apprentice/schoolio/app/models/instructor.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/apprentice/schoolio/app/models/interest.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/apprentice/schoolio/app/models/learning_style.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/apprentice/schoolio/app/models/student_behavior.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/apprentice/schoolio/app/models/student_interest.rb": [
-=======
         18,
         null,
         null,
         1,
-        10,
-        10,
+        11,
+        11,
         null,
         null,
         1,
@@ -354,18 +307,17 @@
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
->>>>>>> wat
         1,
         null,
         1,
-        28,
-        28,
+        29,
+        29,
         null,
         0,
         null,
@@ -378,9 +330,6 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/apprentice/schoolio/app/models/student.rb": [
-=======
       "/Users/apprentice/schoolio/app/controllers/instructors_controller.rb": [
         1,
         null,
@@ -405,7 +354,7 @@
         null,
         null,
         1,
-        10,
+        12,
         null,
         null,
         1,
@@ -415,7 +364,6 @@
         null,
         1,
         1,
->>>>>>> wat
         1,
         1,
         1,
@@ -425,17 +373,36 @@
         null,
         null,
         1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
         1,
+        0,
+        0,
+        0,
+        null,
+        null,
         1,
+        0,
+        0,
+        0,
+        null,
+        null,
         1,
-        1,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         1,
         null,
         1,
-        13,
-        13,
+        15,
+        15,
         null,
         0,
         null,
@@ -445,14 +412,14 @@
         2,
         null,
         null,
+        1,
+        0,
+        null,
+        null,
         null,
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1405718075
-=======
-    "timestamp": 1405788615
->>>>>>> wat
+    "timestamp": 1405808552
   }
 }
