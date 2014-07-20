@@ -5,7 +5,8 @@ class Instructor < ActiveRecord::Base
   has_many :courses
 
   validates :email, uniqueness: true
-  validates_presence_of :first_name, :last_name, :email, :password
+  validates_presence_of :first_name, :last_name, :email
+  validates :password, confirmation: true, on: :create
   validates :email, format: { with: /\A\S+[@]\S+[.]\S+/ }
 	has_many :wats
 	has_many :students, through: :wats
