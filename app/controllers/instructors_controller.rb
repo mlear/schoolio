@@ -74,6 +74,4 @@ class InstructorsController < UsersController
   def course_params
     params.require(:grade).permit(:student_id, :course_id)
   end
-
-
 end

@@ -11,7 +11,6 @@ module SessionsHelper
   end
 
   def signed_in?(user)
-    p user
     if user.class == Student
       return false unless session[:remember_token] == user.id
       Student.find user.id
@@ -22,10 +21,6 @@ module SessionsHelper
   end
 
   private
-
-    # def authorized?
-      # params[:id] == session[:remember_token]
-    # end
 
     def current_student
       @current_user = Student.find(session[:remember_token]) if session[:remember_token]

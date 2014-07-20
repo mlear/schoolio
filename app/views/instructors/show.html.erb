@@ -10,6 +10,9 @@
         <p>email: <%#= @user.email %></p>
       </li> -->
       <li>
+        <%= link_to 'create new course', '#', class: 'btn btn-primary', id: 'add_course' %>
+      </li>
+      <li>
         <h3 class="sidebar-header">your courses</h3>
       </li>
       <% @user.courses.each do |course| %>
