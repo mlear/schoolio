@@ -2,10 +2,7 @@
   <sidebar>
     <%#= image_tag(('default-student.jpg'), class: 'avatar') %>
     <%= form_for @user do |f| %>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
       <%= f.file_field :avatar %>
-
       <%= f.submit "Upload photo" %>
 
     <%end%>
