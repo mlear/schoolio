@@ -10,7 +10,16 @@ Email: <%=@user.email%>
 
 <section class="dashboard">
   <sidebar>
-    <%= image_tag(('default-student.jpg'), class: 'avatar') %>
+    <%#= image_tag(('default-student.jpg'), class: 'avatar') %>
+    <%= form_for @user do |f| %>
+    
+      <%= f.file_field :avatar %>
+
+      <%= f.submit "Upload photo" %>
+
+    <%end%>
+    <%#= file_field :avatar %>
+    <%= image_tag((@user.avatar), class: 'avatar') %>
     <h3 class="sidebar-name"><%= @user.first_name %></h3>
     <ul class="profile content">
       <li>

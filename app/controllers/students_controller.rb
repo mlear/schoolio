@@ -34,8 +34,13 @@ class StudentsController < UsersController
 
   def update
     @user = Student.find(params[:id])
+    puts "I'm in the right place"
     if signed_in?
-      @user.update(user_params)
+      puts "Updating avatar image"
+      p user_params
+      @user.avatar = user_params[:avatar]
+      p @user.avatar
+      @user.save
       redirect_to student_path(@user)
     else
       p 'wrong branch!'
