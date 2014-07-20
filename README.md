@@ -13,3 +13,7 @@
 ## User Profile
 
 ![dashboard](user_profile.png)
+
+#Questions:
+
+- redirect_to path and return not working in our tests, but it does work in our app. however, if we write the code to make all the tests pass, the app fails. wtf?!

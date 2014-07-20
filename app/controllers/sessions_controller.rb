@@ -2,13 +2,13 @@ class SessionsController < ApplicationController
 
   def create
     check_for_unique_email
-    if @user && @user.authenticate(params[:session][:password])
-      sign_in @user
-      redirect_to @user
+    redirect_to root_path and return unless @user && @user.authenticate(params[:session][:password])
+    sign_in @user
+    redirect_to @user and return
     # else
       # redirect_to root_path
       # render 'show'
-    end
+    # end
   end
 
   def destroy
