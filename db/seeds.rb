@@ -9,7 +9,18 @@
 Instructor.create(first_name: "Matt", last_name: "Jones", email: "matt@jones.com", password: "whocaresabouterrors")
 Instructor.create(first_name: "Jonathon", last_name: "Eyler-Werve", email: "jonathon@dbc.com", password: "bootstrap")
 Student.create(first_name: "Marty", last_name: "Lear", email: "m.lear@gmail.com", password: "yolo")
-isaac = Student.create(first_name: "Isaac", last_name: "Molotovski", email: "i_am@hacking.com", password: "hacker")
+Student.create(first_name: "Isaac", last_name: "Molotovski", email: "i_am@hacking.com", password: "hacker")
+
+48.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  Student.create({
+    first_name: first_name,
+    last_name: last_name,
+    email: "#{first_name}.#{last_name}@email.com",
+    password: "foobar"
+    })
+end
 
 ["Energy Level",
 "Assertiveness",
@@ -33,22 +44,24 @@ learning_styles.each { |ls| LearningStyle.create(ls) }
 
 [ {name: "While Loops 200", subject: "Computer Science"},
   {name: "CSS 404", subject: "Computer Science"},
-  {name: "Recursion", subject: "Recursion"},
-  {name: "While Loops 200", subject: "Computer Science"},
-  {name: "While Loops 200", subject: "Computer Science"},
-  {name: "While Loops 200", subject: "Computer Science"},
-  {name: "While Loops 200", subject: "Computer Science"},
-  {name: "While Loops 200", subject: "Computer Science"},
-]
+  {name: "Recursion 101", subject: "Recursion"},
+  {name: "Ukuleles, and How to Play Them", subject: "Computer Science"},
+  {name: "Coding", subject: "(The New) Literacy"},
+  {name: "Literacy (is still)", subject: "(The New) Literacy"},
+  {name: "The Difference Between What Snakes and Salamanders Sound Like", subject: "Animal Studies"},
+  {name: "Puns", subject: "Computer Science"},
+  {name: "How to AJAX Everything", subject: "Computer Science"} ].each do |a_class|
+  Course.create(a_class)
+end
 
 num = 0
 
-50.times {
-  num += 1
-  Grade.create(student_id: num, course_id: num, gpa: 3.5)
-}
-
-50.times {
-  num = rand(1..10)
-  Course.create(name: "test #{num}" , subject: "math")
-}
+Student.all.each do |student|
+  Course.all.each do |course|
+    student.grades << Grade.create({
+      student_id: student.id,
+      course_id: course.id,
+      gpa: rand(20..40).to_f / 10
+    })
+  end
+end
