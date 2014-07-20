@@ -27,7 +27,7 @@ Email: <%=@user.email%>
         <p>name: <%= @user.name %></p>
       </li>
       <li>
-        <p>email: <%= @user.email %></p>
+        <p>email: <a href="mailto:<%= @user.email %>>Email me</a></p>
       </li>
       <% if @user.learning_style %>
       <li>
