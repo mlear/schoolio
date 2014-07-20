@@ -43,6 +43,7 @@ learning_styles = [{ name: "Visual", description: "This preference includes the 
 learning_styles.each { |ls| LearningStyle.create(ls) }
 
 [ {name: "While Loops 200", subject: "Computer Science"},
+	{name: "Checking Error Messages", subject: "Computer Science", instructor_id: 1},
   {name: "CSS 404", subject: "Computer Science"},
   {name: "Recursion 101", subject: "Recursion"},
   {name: "Ukuleles, and How to Play Them", subject: "Computer Science"},

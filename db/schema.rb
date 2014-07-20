@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20140718221527) do
 
   create_table "behavior_traits", force: true do |t|
     t.string   "name"
-    t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -64,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140718221527) do
   create_table "student_behaviors", force: true do |t|
     t.integer  "student_id"
     t.integer  "behavior_trait_id"
+    t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

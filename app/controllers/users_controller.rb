@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :assign_user
+  # before_filter :assign_user
 
   def index
     render 'index'
