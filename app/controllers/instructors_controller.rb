@@ -59,8 +59,8 @@ class InstructorsController < UsersController
   end
 
   def add_instructor_course
-    @user = Instructor.find(params[:id])
-    course_id = params[:grade][:course_id]
+    @user = current_instructor
+    course_id = params[:id]
     Course.update(course_id, instructor_id: @user.id)
     redirect_to @user
   end
