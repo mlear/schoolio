@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/dashboard' => 'users#show'
   match 'instructors/edit_my_student/:id', to: 'instructors#editmystudent', as: :edit_my_student, via: 'get'
   match 'instructors/edit_my_student/:id', to: 'instructors#addstudentcourse', as: :addstudentcourse, via: 'get'
-  match 'instructors/add_a_course:id', to: 'instructors#add_instructor_course', as: :add_instructor_course, via: 'get'
+  match 'instructors/add_a_course/:id', to: 'instructors#add_instructor_course', as: :add_instructor_course, via: 'get'
 
 
   root 'users#index'
