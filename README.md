@@ -1,3 +1,9 @@
+#Hey guys,
+
+I'll be in around noon. I think I fixed the user authentication yesterday, or at least semi-fixed it. You can no longer visit someone else's profile when you're logged in, so that's a plus.
+
+-Z
+
 #5 Day Project - SCHOOL.IO                               [![Build Status](https://travis-ci.org/zpfled/schoolio.svg?branch=master)][1][![Coverage Status](https://coveralls.io/repos/zpfled/schoolio/badge.png)][2]
 ##MVP
 
