@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20140719194053) do
     t.integer  "student_interest_id"
     t.integer  "grade"
     t.string   "school_name"
-    t.string   "avatar"
+    t.text     "avatar"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

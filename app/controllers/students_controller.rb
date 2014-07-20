@@ -38,9 +38,8 @@ class StudentsController < UsersController
     if signed_in?
       puts "Updating avatar image"
       p user_params
-      @user.avatar = user_params[:avatar]
-      p @user.avatar
-      @user.save
+      @user.update!(user_params)
+   
       redirect_to student_path(@user)
     else
       p 'wrong branch!'
