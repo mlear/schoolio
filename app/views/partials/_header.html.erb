@@ -4,13 +4,13 @@
     <li>
       <%= link_to 'about', 'https://github.com/zpfled/schoolio', method: :get, class: '' %>
     </li>
-    <% if signed_in? %>
+    <% if signed_in?(@user) %>
       <li>
-        <%= link_to 'dashboard', "/#{session[:remember_token]}" %>
+        <%= link_to 'dashboard', @user %>
       </li>
       <% if @user %>
       <li>
-        <%= link_to 'settings', ( @user.class == Student ? edit_student_path : edit_instructor_path ) %>
+        <%= link_to 'settings', self.send("edit_#{session[:user_type]}_path".to_sym, @user) %>
       </li>
       <% end %>
       <li>

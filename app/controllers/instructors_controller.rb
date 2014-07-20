@@ -31,7 +31,7 @@ class InstructorsController < UsersController
 
   def update
     @user = Instructor.find(params[:id])
-    if signed_in?
+    if signed_in?(@user)
       @user.update(user_params)
       redirect_to instructor_path(@user)
     else
@@ -66,14 +66,6 @@ class InstructorsController < UsersController
   end
 
   private
-
-  def assign_user
-    if params[:id]
-      @user = Instructor.find params[:id]
-    else
-      @user = current_instructor
-    end
-  end
 
   def user_params
     params.require(:instructor).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar)

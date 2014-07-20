@@ -25,6 +25,7 @@ class StudentsController < UsersController
 
   def show
     assign_user
+    redirect_to root_path unless signed_in?(@user)
   end
 
   def edit
@@ -40,6 +41,8 @@ class StudentsController < UsersController
       p user_params
       @user.update!(user_params)
    
+    if signed_in?(@user)
+      @user.update(user_params)
       redirect_to student_path(@user)
     else
       p 'wrong branch!'
@@ -55,14 +58,6 @@ class StudentsController < UsersController
   end
 
   private
-
-  def assign_user
-    if params[:id]
-      @user = Student.find params[:id]
-    else
-      @user = current_student
-    end
-  end
 
   def user_params
     params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar)

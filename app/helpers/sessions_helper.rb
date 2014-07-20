@@ -1,28 +1,48 @@
 module SessionsHelper
-  attr_reader :current_user
+  attr_accessor :current_user
 
   def sign_in(user)
-    session[:remember_token] = "#{user.class.to_s.downcase}s/#{user.id}"
+    session[:user_type] = user.class.to_s.downcase
+    session[:remember_token] = user.id
   end
 
   def sign_out
     session[:remember_token] = nil
   end
 
-  # def current_user
-  #   @current_user
-  # end
-
-  def current_student
-    @current_user = Student.find(session[:remember_token])
+  def signed_in?(user)
+    p user
+    if user.class == Student
+      return false unless session[:remember_token] == user.id
+      Student.find user.id
+    elsif user.class == Instructor
+      return false unless session[:remember_token] == user.id
+      Instructor.find user.id
+    end
   end
 
-  def current_instructor
-    @current_user = Instructor.find(session[:remember_token])
-  end
+  private
 
-  def signed_in?
-    return false unless session[:remember_token]
-    true
-  end
+    # def authorized?
+      # params[:id] == session[:remember_token]
+    # end
+
+    def current_student
+      @current_user = Student.find(session[:remember_token]) if session[:remember_token]
+    end
+
+    def current_instructor
+      @current_user = Instructor.find(session[:remember_token]) if session[:remember_token]
+    end
+
+    def assign_user
+      @user = self.send("current_#{session[:user_type]}".to_sym)
+    end
+    # def assign_instructor
+    #   @user = current_instructor if session[:remember_token]
+    # end
+
+    # def assign_student
+    #   @user = current_student if session[:remember_token]
+    # end
 end
