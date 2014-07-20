@@ -30,6 +30,8 @@
     <div id="chart"></div>
   </div>
 
+  <div class="instructor-info">
+
   <h2>My Students</h2>
 
   <% @user.my_students.each do |student| %>
@@ -48,6 +50,8 @@
       <li> <%= link_to course.name, add_instructor_course_path(course) %></li>
     <% end %>
   <%end%>
+
+</div>
 
 </section>
 
