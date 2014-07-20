@@ -1,14 +1,24 @@
 <section class="dashboard">
   <sidebar>
     <%= image_tag(('default-teacher.png'), class: 'avatar') %>
-    <h3 class="sidebar-name"><%= @user.first_name %></h3>
+    <h3 class="sidebar-header"><%= @user.first_name %></h3>
     <ul class="profile content">
-      <li>
-        <p>name: <%= @user.name %></p>
+      <!-- <li>
+        <p>name: <%#= @user.name %></p>
       </li>
       <li>
-        <p>email: <%= @user.email %></p>
+        <p>email: <%#= @user.email %></p>
+      </li> -->
+      <li>
+        <h3 class="sidebar-header">your courses</h3>
       </li>
+      <% @user.courses.each do |course| %>
+        <li>
+          <p>
+            <%= link_to course.name, course %>
+          </p>
+        </li>
+      <%end%>
 
     </ul>
   </sidebar>
@@ -18,10 +28,7 @@
 </section>
 <div id="chart"></div>
 
-<%=@user.first_name%>
-<% @user.courses.each do |course| %>
-  <li> <%= link_to course.name, course %></li>
-<%end%>
+
 
 <%= form_for Course.new do |f| %>
   <%= f.label :name, 'course name' %>
