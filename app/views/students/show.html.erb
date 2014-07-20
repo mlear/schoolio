@@ -1,13 +1,3 @@
-
-<%= link_to 'settings', edit_student_path %>
-<%= button_to 'delete account', @user, method: :delete %>
-First Name: <%=@user.first_name%><br>
-Email: <%=@user.email%>
-<!-- image_tag(current_student.avatar) if current_student.avatar? -->
-<% @user.courses.each do |course| %>
-  <li> <%= link_to course.name, course %></li>
-<%end%>
-
 <section class="dashboard">
   <sidebar>
     <%#= image_tag(('default-student.jpg'), class: 'avatar') %>
@@ -46,9 +36,11 @@ Email: <%=@user.email%>
       <% end %>
     </ul>
   </sidebar>
+
   <section id="student-chart">
-	<div id="chart"></div>
+	  <div id="chart"></div>
   </section>
+
 </section>
 
 

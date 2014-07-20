@@ -42,11 +42,14 @@ class StudentsController < UsersController
       @user.update!(user_params)
     end
    
+    if signed_in? @user
+      @user.update!(user_params)
+    end
+    
     if signed_in?(@user)
       @user.update(user_params)
       redirect_to student_path(@user)
     else
-      p 'wrong branch!'
       redirect_to 'edit'
     end
   end

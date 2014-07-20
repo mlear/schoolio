@@ -35,15 +35,15 @@ class GradesController < ApplicationController
   end
 
   def chart
-    @student_grades = Grade.where(student_id: current_student)
+    assign_user
 
-    grades = @student_grades.group_by do |grade|
-      grade.course.name
+    grades = @user.grades.group_by do |grade|
+      grade[:course][:name] if grade[:course]
     end
 
     new_grades = grades.select do |key, value|
       value.map! do |grade|
-        grade.gpa
+        grade[:gpa]
       end
     end
 

@@ -10,6 +10,9 @@
         <p>email: <%#= @user.email %></p>
       </li> -->
       <li>
+        <%= link_to 'create new course', '#', class: 'btn btn-primary', id: 'add_course' %>
+      </li>
+      <li>
         <h3 class="sidebar-header">your courses</h3>
       </li>
       <% @user.courses.each do |course| %>
@@ -22,25 +25,29 @@
 
     </ul>
   </sidebar>
-  <div id="chart"></div>
+
+  <div id="student-chart">
+    <div id="chart"></div>
+  </div>
+
+  <h2>My Students</h2>
+
+  <% @user.my_students.each do |student| %>
+    <li> <%= link_to "#{student.name}", edit_my_student_path(student) %></li>
+  <%end%>
+
+  <h2>My Courses</h2>
+
+  <% @user.courses.each do |course| %>
+    <li><%= course.name %> <%= button_to "Delete", course, method: :patch %></li>
+  <%end%>
+
+  <h3>Available Courses to Teach</h3>
+  <% Course.all.each do |course| %>
+    <% if course.instructor == nil %>
+      <li> <%= link_to course.name, add_instructor_course_path(course) %></li>
+    <% end %>
+  <%end%>
+
 </section>
-
-<h2>My Students</h2>
-
-<% @user.students.each do |student| %>
-  <li> <%= link_to "#{student.first_name} #{student.last_name}", edit_my_student_path(student) %></li>
-<%end%>
-
-<h2>My Courses</h2>
-
-<% @user.courses.each do |course| %>
-  <li> <%= course.name %> <%= button_to "Delete", course, method: :delete %></li>
-<%end%>
-
-<h3>Available Courses to Teach</h3>
-<% Course.all.each do |course| %>
-  <% if course.instructor == nil %>
-    <li> <%= link_to course.name, add_instructor_course_path(course) %></li>
-  <% end %>
-<%end%>
 
