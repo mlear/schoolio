@@ -11,6 +11,7 @@ class CreateStudents < ActiveRecord::Migration
     	t.integer :student_interest_id
     	t.integer :grade
     	t.string :school_name
+      t.text :avatar
       t.timestamps
     end
   end

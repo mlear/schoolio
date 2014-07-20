@@ -13,6 +13,7 @@ class StudentsController < UsersController
 
   def create
     @user = Student.new(user_params)
+
     if @user.valid?
       @user.save
       sign_in @user
@@ -34,6 +35,12 @@ class StudentsController < UsersController
 
   def update
     @user = Student.find(params[:id])
+    puts "I'm in the right place"
+    if signed_in?
+      puts "Updating avatar image"
+      p user_params
+      @user.update!(user_params)
+   
     if signed_in?(@user)
       @user.update(user_params)
       redirect_to student_path(@user)
@@ -53,7 +60,7 @@ class StudentsController < UsersController
   private
 
   def user_params
-    params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar)
   end
 
 
