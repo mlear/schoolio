@@ -36,7 +36,11 @@ module SessionsHelper
     end
 
     def assign_user
-      @user = self.send("current_#{session[:user_type]}".to_sym)
+      if session[:user_type]
+        @user = self.send("current_#{session[:user_type]}".to_sym)
+      else
+        nil
+      end
     end
     # def assign_instructor
     #   @user = current_instructor if session[:remember_token]

@@ -10,7 +10,7 @@ $(document).ready(function() {
     $('#signup-form-modal').fadeToggle(400);
   })
 
-  $('.new_course').on('click', function(event) {
+  $('.add_course').on('click', function(event) {
     event.preventDefault();
     $('#new_course-form-modal').fadeToggle(400);
   })

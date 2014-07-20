@@ -135,6 +135,9 @@
         null,
         null,
         null,
+        null,
+        null,
+        null,
         1,
         10,
         10,
@@ -202,6 +205,8 @@
       ],
       "/Users/apprentice/schoolio/app/controllers/users_controller.rb": [
         1,
+        1,
+        null,
         1,
         44,
         null,
@@ -355,6 +360,6 @@
         null
       ]
     },
-    "timestamp": 1405824193
+    "timestamp": 1405877778
   }
 }
