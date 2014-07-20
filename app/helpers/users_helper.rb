@@ -1,4 +1,6 @@
 module UsersHelper
+
+
   def name
     "#{first_name} #{last_name}"
   end

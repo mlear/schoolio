@@ -23,17 +23,17 @@ class StudentsController < UsersController
   end
 
   def show
-    assign_user
+    assign_student
   end
 
   def edit
-    assign_user
+    assign_student
     render 'edit'
   end
 
   def update
     @user = Student.find(params[:id])
-    if signed_in?
+    if signed_in?(@user)
       @user.update(user_params)
       redirect_to student_path(@user)
     else
@@ -50,14 +50,6 @@ class StudentsController < UsersController
   end
 
   private
-
-  def assign_user
-    if params[:id]
-      @user = Student.find params[:id]
-    else
-      @user = current_student
-    end
-  end
 
   def user_params
     params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation)

@@ -35,11 +35,19 @@ class UsersController < ApplicationController
 
   private
 
-  def assign_user
+  def assign_instructor
     if params[:id]
-      @user = User.find params[:id]
+      @user = Instructor.find params[:id]
     else
-      @user = current_user
+      @user = current_instructor
+    end
+  end
+
+  def assign_student
+    if params[:id]
+      @user = Student.find params[:id]
+    else
+      @user = current_student
     end
   end
 

@@ -22,21 +22,8 @@
 
     </ul>
   </sidebar>
-  <% @user.courses.each do |course| %>
-    <li> <%= link_to course.name, course %></li>
-  <%end%>
 </section>
 <div id="chart"></div>
-
-
-
-<%= form_for Course.new do |f| %>
-  <%= f.label :name, 'course name' %>
-  <%= f.text_field :name%>
-  <%= f.label :subject %>
-  <%= f.text_field :subject %>
-  <%= f.submit "new course" %>
-<% end %>
 
 <h2>My Students</h2>
 

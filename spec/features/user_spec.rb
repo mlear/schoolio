@@ -154,8 +154,8 @@ describe 'User pages' do
 
     it 'allows instructors to create new courses' do
       fill_in 'course name', with: "Wat"
-      fill_in 'Subject', with: "Wat"
-      expect{click_on "new course"}.to change{Course.count}
+      fill_in 'course subject', with: "Wat"
+      expect{click_on "add course"}.to change{Course.count}
     end
 
     it 'allows me to view my students' do

@@ -4,7 +4,7 @@
     <li>
       <%= link_to 'about', 'https://github.com/zpfled/schoolio', method: :get, class: '' %>
     </li>
-    <% if signed_in? %>
+    <% if signed_in?(@user) %>
       <li>
         <%= link_to 'dashboard', "/#{session[:remember_token]}" %>
       </li>
