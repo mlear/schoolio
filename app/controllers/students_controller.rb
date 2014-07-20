@@ -36,10 +36,11 @@ class StudentsController < UsersController
   def update
     @user = Student.find(params[:id])
     puts "I'm in the right place"
-    if signed_in?
+    if signed_in?(user)
       puts "Updating avatar image"
       p user_params
       @user.update!(user_params)
+    end
    
     if signed_in?(@user)
       @user.update(user_params)
@@ -62,6 +63,4 @@ class StudentsController < UsersController
   def user_params
     params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar)
   end
-
-
 end
