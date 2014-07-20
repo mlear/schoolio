@@ -35,20 +35,20 @@ Email: <%=@user.email%>
       <% end %>
       <% if @user.student_behaviors.length > 0 %>
       <li>
-        <p>behavior profile: <%= @user.behavior_profile %></p>
+        <p>behavior profile: <%= @user.profile(@user.student_behaviors) %></p>
       </li>
       <% end %>
       <% if @user.interests.length > 0 %>
       <li>
-        <p>interests: <%= @user.interest_profile %></p>
+        <p>interests: <%= @user.profile(@user.interests) %></p>
       </li>
       <% end %>
     </ul>
   </sidebar>
-  <% @user.courses.each do |course| %>
-    <li> <%= link_to course.name, course %></li>
-  <%end%>
+  <section id="student-chart">
+	<div id="chart"></div>
+  </section>
 </section>
-<div id="chart"></div>
+
 
 

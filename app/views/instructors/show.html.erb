@@ -1,15 +1,41 @@
+<section class="dashboard">
+  <sidebar>
+    <%= image_tag(('default-teacher.png'), class: 'avatar') %>
+    <h3 class="sidebar-header"><%= @user.first_name %></h3>
+    <ul class="profile content">
+      <!-- <li>
+        <p>name: <%#= @user.name %></p>
+      </li>
+      <li>
+        <p>email: <%#= @user.email %></p>
+      </li> -->
+      <li>
+        <h3 class="sidebar-header">your courses</h3>
+      </li>
+      <% @user.courses.each do |course| %>
+        <li>
+          <p>
+            <%= link_to course.name, course %>
+          </p>
+        </li>
+      <%end%>
 
-<%=@user.first_name%>
-<% @user.courses.each do |course| %>
-  <li> <%= link_to course.name, course %></li>
-<%end%>
+    </ul>
+  </sidebar>
+  <% @user.courses.each do |course| %>
+    <li> <%= link_to course.name, course %></li>
+  <%end%>
+</section>
+<div id="chart"></div>
+
+
 
 <%= form_for Course.new do |f| %>
-	<%= f.label :name, 'course name' %>
-	<%= f.text_field :name%>
-	<%= f.label :subject %>
-	<%= f.text_field :subject %>
-	<%= f.submit "new course" %>
+  <%= f.label :name, 'course name' %>
+  <%= f.text_field :name%>
+  <%= f.label :subject %>
+  <%= f.text_field :subject %>
+  <%= f.submit "new course" %>
 <% end %>
 
 <h2>My Students</h2>
@@ -26,8 +52,8 @@
 
 <h3>Available Courses to Teach</h3>
 <% Course.all.each do |course| %>
-	<% if course.instructor == nil %>
-		<li> <%= link_to course.name, add_instructor_course_path(course) %></li>
-	<% end %>
+  <% if course.instructor == nil %>
+    <li> <%= link_to course.name, add_instructor_course_path(course) %></li>
+  <% end %>
 <%end%>
 
