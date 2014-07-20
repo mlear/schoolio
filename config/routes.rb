@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   get '/dashboard' => 'users#show'
   match 'instructors/edit_my_student/:id', to: 'instructors#editmystudent', as: :edit_my_student, via: 'get'
   match 'instructors/edit_my_student/:id', to: 'instructors#addstudentcourse', as: :addstudentcourse, via: 'get'
-  match 'instructors/:id', to: 'instructors#add_instructor_course', as: :add_instructor_course, via: 'get'
+  match 'instructors/add_a_course:id', to: 'instructors#add_instructor_course', as: :add_instructor_course, via: 'get'
 
 
   root 'users#index'
 
   match '/signup',  to: 'users#new',            via: 'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
+  # match '/signin',  to: 'sessions#create',       via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   post '/chart' => 'grades#chart'
 

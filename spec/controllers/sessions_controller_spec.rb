@@ -37,7 +37,7 @@ describe SessionsController do
 
     describe 'with invalid information' do
       it 'does not sign in a user' do
-        get :create, invalid
+        post :create, invalid
         expect(session[:remember_token]).to be_blank
       end
 

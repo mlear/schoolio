@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+['sports', 'music', 'drama', 'animals', 'reading', 'tech', 'movies', 'the ladies', 'tv', 'skateboarding', 'wine'].each do |interest|
+  Interest.create(name: interest)
+end
+
 Instructor.create(first_name: "Matt", last_name: "Jones", email: "matt@jones.com", password: "whocaresabouterrors")
 Instructor.create(first_name: "Jonathon", last_name: "Eyler-Werve", email: "jonathon@dbc.com", password: "bootstrap")
 Student.create(first_name: "Marty", last_name: "Lear", email: "m.lear@gmail.com", password: "yolo")
@@ -58,10 +62,18 @@ num = 0
 
 Student.all.each do |student|
   Course.all.each do |course|
-    student.grades << Grade.create({
-      student_id: student.id,
-      course_id: course.id,
-      gpa: rand(20..40).to_f / 10
-    })
+    4.times do
+      student.grades << Grade.create({
+        student_id: student.id,
+        course_id: course.id,
+        gpa: rand(20..40).to_f / 10
+      })
+    end
   end
+  student.learning_style_id = rand(1..5)
+  student.behavior_traits << BehaviorTrait.all.sample(3)
+  student.interests << Interest.all.sample(3)
+  student.save
 end
+
+puts 'done seeding'

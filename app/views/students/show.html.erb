@@ -31,17 +31,17 @@ Email: <%=@user.email%>
       </li>
       <% if @user.learning_style %>
       <li>
-        <p>learning style: <%= @user.learning_style %></p>
+        <p>learning style: <%= @user.learning_style.name %></p>
       </li>
       <% end %>
       <% if @user.student_behaviors.length > 0 %>
       <li>
-        <p>behavior profile: <%= @user.profile(@user.student_behaviors) %></p>
+        <p>behavior profile: <%= @user.behavior_profile %></p>
       </li>
       <% end %>
       <% if @user.interests.length > 0 %>
       <li>
-        <p>interests: <%= @user.profile(@user.interests) %></p>
+        <p>interests: <%= @user.interest_profile %></p>
       </li>
       <% end %>
     </ul>
