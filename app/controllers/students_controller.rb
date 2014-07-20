@@ -40,7 +40,7 @@ class StudentsController < UsersController
       puts "Updating avatar image"
       p user_params
       @user.update!(user_params)
-   
+    end
     if signed_in?(@user)
       @user.update(user_params)
       redirect_to student_path(@user)
