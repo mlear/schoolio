@@ -1,57 +1,11 @@
 class UsersController < ApplicationController
+  before_filter :assign_user
+
   def index
     render 'index'
   end
 
   def create
     render 'choose_role', params: params
-  end
-
-  def show
-    assign_user
-  end
-
-  def edit
-    assign_user
-    render 'edit'
-  end
-
-  def update
-    @user = User.find(params[:id])
-    if signed_in?
-      @user.update(user_params)
-      redirect_to user_path(@user)
-    else
-      redirect_to 'edit'
-    end
-  end
-
-  def destroy
-    @user = current_user
-    User.destroy(@user.id)
-    sign_out
-    redirect_to root_path
-  end
-
-  private
-
-  def assign_instructor
-    if params[:id]
-      @user = Instructor.find params[:id]
-    else
-      @user = current_instructor
-    end
-  end
-
-  def assign_student
-    if params[:id]
-      @user = Student.find params[:id]
-    else
-      @user = current_student
-    end
-  end
-
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 end

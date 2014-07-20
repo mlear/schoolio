@@ -21,11 +21,11 @@ class InstructorsController < UsersController
   end
 
   def show
-    assign_instructor
+    assign_user
   end
 
   def edit
-    assign_instructor
+    assign_user
     render 'edit'
   end
 

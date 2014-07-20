@@ -2,6 +2,7 @@ module SessionsHelper
   attr_accessor :current_user
 
   def sign_in(user)
+    session[:user_type] = user.class.to_s.downcase
     session[:remember_token] = user.id
   end
 
@@ -9,15 +10,8 @@ module SessionsHelper
     session[:remember_token] = nil
   end
 
-  def current_student
-    @current_user = Student.find(session[:remember_token])
-  end
-
-  def current_instructor
-    @current_user = Instructor.find(session[:remember_token])
-  end
-
   def signed_in?(user)
+    p user
     if user.class == Student
       return false unless session[:remember_token] == user.id
       Student.find user.id
@@ -26,4 +20,29 @@ module SessionsHelper
       Instructor.find user.id
     end
   end
+
+  private
+
+    # def authorized?
+      # params[:id] == session[:remember_token]
+    # end
+
+    def current_student
+      @current_user = Student.find(session[:remember_token]) if session[:remember_token]
+    end
+
+    def current_instructor
+      @current_user = Instructor.find(session[:remember_token]) if session[:remember_token]
+    end
+
+    def assign_user
+      @user = self.send("current_#{session[:user_type]}".to_sym)
+    end
+    # def assign_instructor
+    #   @user = current_instructor if session[:remember_token]
+    # end
+
+    # def assign_student
+    #   @user = current_student if session[:remember_token]
+    # end
 end

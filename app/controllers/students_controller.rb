@@ -23,11 +23,12 @@ class StudentsController < UsersController
   end
 
   def show
-    assign_student
+    assign_user
+    redirect_to root_path unless signed_in?(@user)
   end
 
   def edit
-    assign_student
+    assign_user
     render 'edit'
   end
 
