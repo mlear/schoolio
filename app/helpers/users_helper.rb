@@ -5,10 +5,18 @@ module UsersHelper
     "#{first_name} #{last_name}"
   end
 
-  def profile(things)
+  def behavior_profile
     output = ""
-    things.each do |thing|
-      output << "#{thing.capitalize}, "
+    student_behaviors.each do |b|
+      output << "#{b.behavior_trait.name.capitalize}, "
+    end
+    output[0..-2]
+  end
+
+  def interest_profile
+    output = ""
+    interests.each do |i|
+      output << "#{i.name.capitalize}, "
     end
     output[0..-2]
   end

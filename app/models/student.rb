@@ -5,7 +5,8 @@ class Student < ActiveRecord::Base
   has_many :courses, through: :grades
 
   validates :email, uniqueness: true
-  validates_presence_of :first_name, :last_name, :email, :password
+  validates_presence_of :first_name, :last_name, :email
+  validates :password, confirmation: true, on: :create
   validates :email, format: { with: /\A\S+[@]\S+[.]\S+/ }
 	belongs_to :learning_style
 	has_many :wats

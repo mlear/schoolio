@@ -4,13 +4,14 @@ class CoursesController < ApplicationController
 		@courses = Course.all
 	end
 
-	def new 
+	def new
 		@course = Course.new
 	end
 
-	def create 
+	def create
+		@user = current_instructor
 		@course = Course.create(course_params)
-		redirect_to @course 
+		redirect_to @user
 	end
 
 	def show
@@ -22,9 +23,10 @@ class CoursesController < ApplicationController
 	end
 
 	def update
-		set_course
-		@course.update_attributes(course_params)
-		redirect_to @course
+		@user = current_instructor
+		course_id = params[:id]
+		Course.update(course_id, instructor_id: nil)
+		redirect_to @user
 	end
 
 	def destroy
