@@ -44,12 +44,14 @@
     <li><%= course.name %> <%= button_to "Delete", course, method: :patch %></li>
   <%end%>
 
+  <div id="available_courses">
   <h3>Available Courses to Teach</h3>
   <% Course.all.each do |course| %>
     <% if course.instructor == nil %>
       <li> <%= link_to course.name, add_instructor_course_path(course) %></li>
     <% end %>
   <%end%>
+</div>
 
 </div>
 
