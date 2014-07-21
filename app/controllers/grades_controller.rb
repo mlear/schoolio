@@ -10,7 +10,7 @@ class GradesController < ApplicationController
 
   def create
     @grade = Grade.create(grade_params)
-    redirect_to @grade
+    redirect_to :back
   end
 
   def show

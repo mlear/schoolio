@@ -47,7 +47,8 @@ class InstructorsController < UsersController
   end
 
   def editmystudent
-    @user = Student.find(params[:id])
+    @student = Student.find(params[:id])
+    @user = current_instructor
     @courses = Course.all
     render "editmystudent"
   end
