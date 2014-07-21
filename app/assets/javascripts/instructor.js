@@ -11,7 +11,12 @@ $(document).ready(function(){
 
 		$.post('/courses', courseData, function( response ) { 
 			close(); 
-			$("#available_courses li").append("<li><a href='/add_a_course/" + response + "'>" + courseName + "</a></li>");
+			if ($("#available_courses li") == undefined ) {
+				console.log('shit')
+					$("#available_courses li").append("<li><a href='/add_a_course/" + response + "'>" + courseName + "</a></li>");
+				} else {
+					$("#available_courses").append("<li><a href='/add_a_course/" + response + "'>" + courseName + "</a></li>");
+				}
 
 		});
 	})
