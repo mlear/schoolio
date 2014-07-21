@@ -51,6 +51,25 @@ class GradesController < ApplicationController
 
   end
 
+  # def instructor_chart
+  #   assign_user
+  #   course_averages = []
+
+
+  #   @user.courses.each do |course|
+  #     grades = []
+  #     course.grades.each do |grade|
+  #       grades << grade.gpa
+  #     end
+  #     course_averages << grades.inject(:+) / grades.length
+  #     puts course_averages
+  #   end
+
+
+  #   render json: new_grades
+
+  # end
+
   def set_grade
     @grade = Grade.find(params[:id])
   end

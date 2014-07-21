@@ -1,5 +1,16 @@
 @import 'variables';
 
+.user-edit {
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  width: 100%;
+  background: -webkit-linear-gradient(top, $black, $white);
+  background: -o-linear-gradient(top, $black, $white);
+  background: -moz-linear-gradient(top, $black, $white);
+  background: linear-gradient(top, $black, $white);
+}
+
 .index {
   position: absolute;
   /*top: 0;*/

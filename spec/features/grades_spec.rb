@@ -82,7 +82,7 @@ describe 'Grades' do
     end
     # NEED TO GET INTO PARAMS HASH FOR SELECTOR
 
-      it 'should redirect to the new grades show' do
+      pending 'should redirect to the new grades show' do
         course
         visit new_grade_url
         fill_in('grade_gpa', :with => 3.0)
