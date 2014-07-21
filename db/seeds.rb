@@ -6,12 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+p 'creating interests...'
+
 ['sports', 'music', 'drama', 'animals', 'reading', 'tech', 'movies', 'the ladies', 'tv', 'skateboarding', 'wine'].each do |interest|
   Interest.create(name: interest)
 end
 
-Instructor.create(first_name: "Matt", last_name: "Jones", email: "matt@jones.com", password: "whocaresabouterrors")
+p 'creating students and instructors...'
+
+Instructor.create(first_name: "Matt", last_name: "Jones", email: "matt@jones.com", password: "p")
 Instructor.create(first_name: "Jonathon", last_name: "Eyler-Werve", email: "jonathon@dbc.com", password: "bootstrap")
+Instructor.create(first_name: "Mike", last_name: "Likes-Bikes", email: "mike@likes.bikes", password: "p")
 Student.create(first_name: "Marty", last_name: "Lear", email: "m.lear@gmail.com", password: "yolo")
 Student.create(first_name: "Isaac", last_name: "Molotovski", email: "i_am@hacking.com", password: "hacker")
 
@@ -26,6 +31,8 @@ Student.create(first_name: "Isaac", last_name: "Molotovski", email: "i_am@hackin
     })
 end
 
+p 'creating behavior_traits...'
+
 ["Energy Level",
 "Assertiveness",
 "Sociability",
@@ -38,6 +45,8 @@ end
   BehaviorTrait.create(name: trait)
 end
 
+p 'creating learning_styles...'
+
 learning_styles = [{ name: "Visual", description: "This preference includes the depiction of information in maps, spider diagrams, charts, graphs, flow charts, labelled diagrams, and all the symbolic arrows, circles, hierarchies and other devices, that people use to represent what could have been presented in words. This mode could have been called Graphic (G) as that better explains what it covers. It does NOT include still pictures or photographs of reality, movies, videos or PowerPoint. It does include designs, whitespace, patterns, shapes and the different formats that are used to highlight and convey information. When a whiteboard is used to draw a diagram with meaningful symbols for the relationship between different things that will be helpful for those with a Visual preference. It must be more than mere words in boxes that would be helpful to those who have a Read/write preference."  },
 { name: "Aural / Auditory", description: "This perceptual mode describes a preference for information that is 'heard or spoken.' Learners who have this as their main preference report that they learn best from lectures, group discussion, radio, email, using mobile phones, speaking, web-chat and talking things through. Email is included here because; although it is text and could be included in the Read/write category (below), it is often written in chat-style with abbreviations, colloquial terms, slang and non-formal language. The Aural preference includes talking out loud as well as talking to oneself. Often people with this preference want to sort things out by speaking first, rather than sorting out their ideas and then speaking. They may say again what has already been said, or ask an obvious and previously answered question. They have need to say it themselves and they learn through saying it - their way." },
 { name: "Read / Write", description: "This preference is for information displayed as words. Not surprisingly, many teachers and students have a strong preference for this mode. Being able to write well and read widely are attributes sought by employers of graduates. This preference emphasizes text-based input and output - reading and writing in all its forms but especially manuals, reports, essays and assignments. People who prefer this modality are often addicted to PowerPoint, the Internet, lists, diaries, dictionaries, thesauri, quotations and words, words, words... Note that most PowerPoint presentations and the Internet, GOOGLE and Wikipedia are essentially suited to those with this preference as there is seldom an auditory channel or a presentation that uses Visual symbols." },
@@ -46,19 +55,22 @@ learning_styles = [{ name: "Visual", description: "This preference includes the 
 
 learning_styles.each { |ls| LearningStyle.create(ls) }
 
-[ {name: "While Loops 200", subject: "Computer Science"},
-  {name: "CSS 404", subject: "Computer Science"},
-  {name: "Recursion 101", subject: "Recursion"},
-  {name: "Ukuleles, and How to Play Them", subject: "Computer Science"},
-  {name: "Coding", subject: "(The New) Literacy"},
-  {name: "Literacy (is still)", subject: "(The New) Literacy"},
-  {name: "The Difference Between What Snakes and Salamanders Sound Like", subject: "Animal Studies"},
-  {name: "Puns", subject: "Computer Science"},
-  {name: "How to AJAX Everything", subject: "Computer Science"} ].each do |a_class|
+[ {name: "While Loops 200", subject: "Computer Science", instructor_id: rand(1..2)},
+  {name: "CSS 404", subject: "Computer Science", instructor_id: 2},
+  {name: "Recursion 101", subject: "Recursion", instructor_id: rand(1..2)},
+  {name: "Ukuleles, and How to Play Them", subject: "Computer Science", instructor_id: rand(1..2)},
+  {name: "Coding", subject: "(The New) Literacy", instructor_id: rand(1..2)},
+  {name: "Literacy (is still)", subject: "(The New) Literacy", instructor_id: rand(1..2)},
+  {name: "The Difference Between What Snakes and Salamanders Sound Like", subject: "Animal Studies", instructor_id: rand(1..2)},
+  {name: "Puns", subject: "Computer Science", instructor_id: 1},
+  {name: "Nice", subject: "Literacy", instructor_id: 3},
+  {name: "Poopsmithery", subject: "Animal Studies", instructor_id: rand(1..2)},
+  {name: "Who Cares About Errors?", subject: "Computer Science", instructor_id: 1},
+  {name: "How to AJAX Everything", subject: "Computer Science", instructor_id: rand(1..2)} ].each do |a_class|
   Course.create(a_class)
 end
 
-num = 0
+p 'seeding students with stuff'
 
 Student.all.each do |student|
   Course.all.each do |course|
