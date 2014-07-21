@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   root 'users#index'
 
   match '/signup',  to: 'users#new',            via: 'get'
-  # match '/signin',  to: 'sessions#create',       via: 'get'
+  match '/signin',  to: 'sessions#create',       via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   post '/chart' => 'grades#chart'
   post '/instructor_chart' => 'grades#instructor_chart'

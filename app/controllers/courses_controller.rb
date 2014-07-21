@@ -11,8 +11,8 @@ class CoursesController < ApplicationController
 	def create
 		@user = current_instructor
 		@course = Course.create(course_params)
-		# redirect_to @user
-		render json: @course.id 
+		redirect_to @user
+		# render json: @course.id
 	end
 
 	def show

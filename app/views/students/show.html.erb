@@ -57,18 +57,14 @@
               <% @grades.each do |value| %>
                 <% grade_array << value.gpa %>
              <% end %>
-<<<<<<< HEAD
 
-             <% @average = grade_array.reduce(:+) / @grades.count %>
-             Course GPA: <%= @average %>
-=======
              <% if grade_array != nil && grade_array.length > 1 %>
               <%  sum = grade_array.inject(:+) %>
               <% @average = (sum / grade_array.length) %>
               Course GPA: <%= @average.round(2) %>
               <% else %>
              <% end %>
->>>>>>> 99751af4354574980eaa38c82acc3f936432acb4
+
           </div>
     </section>
    <% end %>

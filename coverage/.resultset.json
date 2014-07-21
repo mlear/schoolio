@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/josephrosztoczy/Schoolio/app/controllers/courses_controller.rb": [
+      "/Users/apprentice/schoolio/app/controllers/courses_controller.rb": [
         1,
         null,
         1,
@@ -15,8 +15,8 @@
         1,
         2,
         2,
-        null,
         2,
+        null,
         null,
         null,
         1,
@@ -52,7 +52,7 @@
         null,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/controllers/application_controller.rb": [
+      "/Users/apprentice/schoolio/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -60,7 +60,7 @@
         1,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/controllers/grades_controller.rb": [
+      "/Users/apprentice/schoolio/app/controllers/grades_controller.rb": [
         1,
         null,
         1,
@@ -146,7 +146,7 @@
         null,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/controllers/sessions_controller.rb": [
+      "/Users/apprentice/schoolio/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -178,43 +178,43 @@
         null,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/models/behavior_trait.rb": [
+      "/Users/apprentice/schoolio/app/models/behavior_trait.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/models/course.rb": [
+      "/Users/apprentice/schoolio/app/models/course.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/models/grade.rb": [
+      "/Users/apprentice/schoolio/app/models/grade.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/models/interest.rb": [
+      "/Users/apprentice/schoolio/app/models/interest.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/models/learning_style.rb": [
+      "/Users/apprentice/schoolio/app/models/learning_style.rb": [
         1,
         1,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/models/student_behavior.rb": [
+      "/Users/apprentice/schoolio/app/models/student_behavior.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/models/student_interest.rb": [
+      "/Users/apprentice/schoolio/app/models/student_interest.rb": [
         1,
         null,
         1,
@@ -222,13 +222,13 @@
         null,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/models/wat.rb": [
+      "/Users/apprentice/schoolio/app/models/wat.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/controllers/users_controller.rb": [
+      "/Users/apprentice/schoolio/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -241,7 +241,7 @@
         null,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/controllers/instructors_controller.rb": [
+      "/Users/apprentice/schoolio/app/controllers/instructors_controller.rb": [
         1,
         null,
         1,
@@ -265,7 +265,7 @@
         null,
         null,
         1,
-        11,
+        13,
         null,
         null,
         1,
@@ -321,7 +321,7 @@
         null,
         null
       ],
-      "/Users/josephrosztoczy/Schoolio/app/controllers/students_controller.rb": [
+      "/Users/apprentice/schoolio/app/controllers/students_controller.rb": [
         1,
         null,
         1,
@@ -382,6 +382,6 @@
         null
       ]
     },
-    "timestamp": 1405916947
+    "timestamp": 1405946939
   }
 }
