@@ -14,12 +14,23 @@ $(document).ready(function(){
 			});
 		};
 
+		function classIn(){
+			console.log(this.text)
+			$("[id='" +this.text + "']").toggle()
+		};
+
+		function classOut(){
+			$("[id='" +this.text + "']").toggle()
+		};
+
 
 	$.post('/chart', function(response){
 		courseGPAs = response;
 		console.log(courseGPAs)
 		chart(courseGPAs)
 	})
+
+	$('#class-list a').hover(classIn, classOut);
 
 })
 
