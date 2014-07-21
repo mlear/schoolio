@@ -99,7 +99,8 @@ describe 'User pages' do
     before { student.courses << course; sign_in student }
 
     it 'greets the student by name' do
-      expect(page).to have_content student.first_name
+      save_and_open_page
+      expect(page).to have_content student.name
     end
 
     # it 'displays the list of the students courses' do
