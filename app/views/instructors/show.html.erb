@@ -1,0 +1,60 @@
+<section class="dashboard">
+  <sidebar>
+    <%= image_tag(('default-teacher.png'), class: 'avatar') %>
+    <h3 class="sidebar-header"><%= @user.first_name %></h3>
+    <ul class="profile content">
+      <!-- <li>
+        <p>name: <%#= @user.name %></p>
+      </li>
+      <li>
+        <p>email: <%#= @user.email %></p>
+      </li> -->
+      <li>
+        <%= link_to 'create new course', '#', class: 'btn btn-primary', id: 'add_course' %>
+      </li>
+      <li>
+        <h3 class="sidebar-header">your courses</h3>
+      </li>
+      <% @user.courses.each do |course| %>
+        <li>
+          <p>
+            <%= link_to course.name, course %>
+          </p>
+        </li>
+      <%end%>
+
+    </ul>
+  </sidebar>
+
+<!--Is here in case of instructor chart  <section id="student-chart">
+    <div id="instructor-chart"></div>
+  </section> -->
+
+
+  <div class="instructor-info">
+
+  <h2>My Students</h2>
+
+  <% @user.my_students.each do |student| %>
+    <li> <%= link_to "#{student.name}", edit_my_student_path(student) %></li>
+  <%end%>
+
+  <h2>My Courses</h2>
+
+  <% @user.courses.each do |course| %>
+    <li><%= course.name %> <%= button_to "Delete", course, method: :patch %></li>
+  <%end%>
+
+  <div id="available_courses">
+  <h3>Available Courses to Teach</h3>
+  <% Course.all.each do |course| %>
+    <% if course.instructor == nil %>
+      <li> <%= link_to course.name, add_instructor_course_path(course) %></li>
+    <% end %>
+  <%end%>
+</div>
+
+</div>
+
+</section>
+

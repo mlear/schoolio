@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718184145) do
+ActiveRecord::Schema.define(version: 20140719194053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "behavior_traits", force: true do |t|
     t.string   "name"
-    t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,12 +25,13 @@ ActiveRecord::Schema.define(version: 20140718184145) do
   create_table "courses", force: true do |t|
     t.string   "subject"
     t.string   "name"
+    t.integer  "instructor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "grades", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "student_id"
     t.integer  "course_id"
     t.float    "gpa"
     t.datetime "created_at"
@@ -39,8 +39,13 @@ ActiveRecord::Schema.define(version: 20140718184145) do
   end
 
   create_table "instructors", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   create_table "interests", force: true do |t|
@@ -59,6 +64,7 @@ ActiveRecord::Schema.define(version: 20140718184145) do
   create_table "student_behaviors", force: true do |t|
     t.integer  "student_id"
     t.integer  "behavior_trait_id"
+    t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -71,12 +77,17 @@ ActiveRecord::Schema.define(version: 20140718184145) do
   end
 
   create_table "students", force: true do |t|
-    t.integer  "learning_style_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
     t.integer  "student_behavior_id"
+    t.integer  "learning_style_id"
     t.integer  "behaviour_trait_id"
     t.integer  "student_interest_id"
     t.integer  "grade"
     t.string   "school_name"
+    t.text     "avatar"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -86,7 +97,13 @@ ActiveRecord::Schema.define(version: 20140718184145) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "wats", force: true do |t|
+    t.integer  "student_id"
+    t.integer  "instructor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

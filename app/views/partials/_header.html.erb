@@ -1,14 +1,28 @@
 <header class="contain">
-  <h1 class="h3 brand pull-left">schoolio</h1>
+  <h1 class="h3 brand pull-left"><%= link_to 'school.io', root_path %></h1>
   <nav class="pull-right">
     <li>
-      <button id="login" class="btn">log in</button>
+      <%= link_to 'about', 'https://github.com/zpfled/schoolio', method: :get, class: '' %>
     </li>
-    <li>
-      <button id="signup" class="btn">sign up</button>
-    </li>
-    <li>
-      <%= button_to 'log out', signout_path, method: :delete, class: "btn" %>
-    </li>
+    <% if signed_in?(@user) %>
+      <li>
+        <%= link_to 'dashboard', @user %>
+      </li>
+      <% if @user %>
+      <li>
+        <%= link_to 'settings', self.send("edit_#{session[:user_type]}_path".to_sym, @user) %>
+      </li>
+      <% end %>
+      <li>
+        <%= button_to 'log out', signout_path, method: :delete, class: "btn" %>
+      </li>
+    <% else %>
+      <li>
+        <button id="signup" class="signup btn">sign up</button>
+      </li>
+      <li>
+        <button id="login" class="login btn">log in</button>
+      </li>
+    <% end %>
   </nav>
 </header>

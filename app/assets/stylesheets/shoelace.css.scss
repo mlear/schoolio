@@ -99,6 +99,10 @@ a:hover {
 Spacing & Blocking
  */
 
+.hidden {
+  display: none;
+}
+
 .content {
   margin-top: 2em;
   margin-bottom: 2em;
@@ -157,6 +161,12 @@ Spacing & Blocking
   float: left;
 }
 
+.scrim {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .white-scrim {
   background-color: rgba(255, 255, 255, .65)
 }
@@ -179,6 +189,14 @@ Spacing & Blocking
 
 .alt-col * {
   color: $alt-color;
+}
+
+.inline {
+  display: inline-block;
+
+  li {
+    display: inline-block;
+  }
 }
 /*
 .alt-col h1,

@@ -1,0 +1,76 @@
+<section class="dashboard">
+  <sidebar>
+    <%#= image_tag(('default-student.jpg'), class: 'avatar') %>
+    <%= form_for @user do |f| %>
+      <%= f.file_field :avatar %>
+      <%= f.submit "Upload photo" %>
+
+    <%end%>
+    <%#= file_field :avatar %>
+    <%= image_tag((@user.avatar), class: 'avatar') %>
+    <h3 class="sidebar-name"><%= @user.first_name %></h3>
+    <ul class="profile content">
+      <li>
+        <p>name: <%= @user.name %></p>
+      </li>
+      <li>
+        <p>email: <a href="mailto:<%= @user.email %>"><%= @user.email %></a></p>
+      </li>
+      <% if @user.learning_style %>
+      <li>
+        <p>learning style: <%= @user.learning_style.name %></p>
+      </li>
+      <% end %>
+      <% if @user.student_behaviors.length > 0 %>
+      <li>
+        <p>behavior profile: <%= @user.behavior_profile %></p>
+      </li>
+      <% end %>
+      <% if @user.interests.length > 0 %>
+      <li>
+        <p>interests: <%= @user.interest_profile %></p>
+      </li>
+      <% end %>
+    </ul>
+  </sidebar>
+
+  <section id="student-chart">
+	  <div id="chart"></div>
+  </section>
+
+  <section id="class-list">
+  <% course_array = [] %>
+   <% @user.courses.each do |course| %>
+      <% if course_array.find { |name| name == course.name } == nil %>
+        <%= link_to course.name, course_path(course) %>  |
+        <% course_array << course.name %>
+      <% end %>
+   <% end %>
+   <% course_array.each do |course| %>
+     <section id="<%= course %>" style="display:none; margin-top: 15px;">
+      <% @course = Course.find_by_name(course) %>
+          <p><%= @course.name %></p>
+          <p><%= @course.subject %></p>
+          <% grade_array = [] %>
+          <div id ="course-gpa">
+            <% @grades = Grade.where("course_id = ?", @course.id).where("student_id = ?", @user.id).to_a %>
+              <% @grades.each do |value| %>
+                <% grade_array << value.gpa %>
+             <% end %>
+
+             <% if grade_array != nil && grade_array.length > 1 %>
+              <%  sum = grade_array.inject(:+) %>
+              <% @average = (sum / grade_array.length) %>
+              Course GPA: <%= @average.round(2) %>
+              <% else %>
+             <% end %>
+
+          </div>
+    </section>
+   <% end %>
+    </section>
+
+</section>
+
+
+

@@ -1,19 +1,36 @@
 @import 'variables';
 
 /*
+Forms
+*/
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+   color: $white;
+}
+
+/*
 Header
 */
 
 header {
 
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+
   .brand {
-    padding: 2%;
+    padding: 2.5% 2%;
     color: $white;
+    letter-spacing: .1em;
   }
 
   nav {
     padding: 2%;
     li {
+      margin: 0 1em;
       display: inline-block;
       list-style: none
     }
@@ -22,6 +39,11 @@ header {
   .btn {
     color: $white;
     border-color: $white;
+
+    &:hover {
+      background-color: $white-scrim;
+      color: $black;
+    }
   }
 }
 
@@ -30,7 +52,47 @@ Buttons/Links
 */
 
 .btn {
+  font-family: $sans-serif-font;
   border: 1px solid;
   background: transparent;
   padding: 1em;
+  color: $white;
+  border-color: $white;
+
+  &:hover {
+    background-color: $white-scrim;
+    color: $black;
+  }
+}
+
+.btn-big {
+  font-family: $serif-font;
+  padding: .75em 1.5em;
+  font-size: 2em;
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+
+  &:hover {
+    background-color: rgba(255, 160, 160, .65);
+    color: $white;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+
+  &:hover {
+    background-color: rgba(160, 160, 255, .65);
+    color: $white;
+  }
+}
+
+.passcode {
+  padding: .5em;
+
+  &:hover {
+    background-color: transparent;
+  }
 }
