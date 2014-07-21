@@ -16,4 +16,9 @@ class Student < ActiveRecord::Base
 	has_many :behavior_traits, through: :student_behaviors
 	has_many :student_interests
 	has_many :interests, through: :student_interests
+
+def my_courses
+  courses.uniq
+end
+
 end

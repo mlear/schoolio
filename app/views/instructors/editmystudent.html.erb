@@ -1,29 +1,29 @@
-<h2><%= "#{@user.first_name} #{@user.last_name}" %>
+<h2><%= "#{@student.name}" %> </h2>
 
-<% @user.courses.each do |course| %>
-  <li> <%= link_to course.name, course %></li>
+<% @student.my_courses.each do |course| %>
+  <li> <%= "#{course.name}" %></li>
 <%end%>
 
-<h3>Add Grades</h3>
+<h2>Add Grades</h2>
 
 <%= form_for Grade.new do |f| %>
 	<%= f.label :gpa %>
 	<%= f.text_field :gpa %>
-	<%= f.hidden_field :student_id, value: @user.id %>
+	<%= f.hidden_field :student_id, value: @student.id %>
 	<%= f.label :course_id %>
-	<%= f.collection_select :course_id, @user.courses, :id, :name %>
+	<%= f.collection_select :course_id, @student.courses, :id, :name %>
 
 	<%= f.submit "Add grade" %>
 
 <% end %>
 
 
-<h3>Select Below to Add to Student </h3>
+<h3>Select Course Below to Add to Student </h3>
 
 <%= @courses.each do |course| %>
 
 	<%= form_for Grade.new do |f| %>
-		<%= f.hidden_field :student_id, value: @user.id %>
+		<%= f.hidden_field :student_id, value: @student.id %>
 		<%= f.hidden_field :course_id, value: course.id %>
 		<%= f.submit "#{course.name}" %>
 	<% end %>
