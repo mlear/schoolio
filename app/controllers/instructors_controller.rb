@@ -50,13 +50,13 @@ class InstructorsController < UsersController
     @student = Student.find(params[:id])
     @user = current_instructor
     @courses = Course.all
-    render "editmystudent"
+    render "edit_my_student"
   end
 
   def addstudentcourse
     @user = Student.find(params[:id])
     Grade.create(course_params)
-    render "editmystudent"
+    render "edit_my_student"
   end
 
   def add_instructor_course

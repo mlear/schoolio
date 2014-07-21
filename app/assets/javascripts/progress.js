@@ -1,20 +1,21 @@
 $(document).ready(function(){
 
 	if ($('#chart').length > 0 ){
-	var courseHeaders, courseGPAs;
-	function chart(GPAs){
-		c3.generate({
-    			bindto: '#chart',
-			    data: {
-			    	json: GPAs
-			    },
-			    // size: { width: 600, height: 300 },
-			    axis: {
-			    		y: { label: "GPA" },
-			    		x: { label: "Progress Report" }
-			    	  }
-			});
-		};
+		var courseHeaders, courseGPAs;
+		
+		function chart(GPAs){
+			c3.generate({
+	    			bindto: '#chart',
+				    data: {
+				    	json: GPAs
+				    },
+				    // size: { width: 600, height: 300 },
+				    axis: {
+				    		y: { label: "GPA" },
+				    		x: { label: "Progress Report" }
+				    	  }
+				});
+			};
 
 		function classIn(){
 			$("[id='" +this.text + "']").toggle()
@@ -25,15 +26,15 @@ $(document).ready(function(){
 		};
 
 
-	$.post('/chart', function(data){
-		courseGPAs = data;
-		chart(courseGPAs)
-	})
+		$.post('/chart', function(data){
+			courseGPAs = data;
+			chart(courseGPAs)
+		});
 
-	$('#class-list a').hover(classIn, classOut);
+		$('#class-list a').hover(classIn, classOut);
 
 
-} 
+	} 
 // This is logic to handle a separate instructor chart
 // else {
 
@@ -70,6 +71,6 @@ $(document).ready(function(){
 // 	$('#class-list a').hover(classIn, classOut);
 
 // }
-})
+});
 
 

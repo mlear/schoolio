@@ -1,16 +1,19 @@
-<h1>hi, <%= @user.first_name %></h1>
-<p>change your information</p>
+<section class="user-edit">
+  <br><br>
+  <h1>hi, <%= @user.first_name %></h1>
+  <p>change your information</p><br>
 
-<%= form_for @user do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit :update %>
-<%end%>
-
-<%= button_to 'delete my account, I\'m dropping out' , @user, method: :delete %>
+  <%= form_for @user do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit :update %>
+  <%end%>
+  <br>
+  <%= button_to 'delete my account, I\'m dropping out' , @user, method: :delete %>
+</section>
