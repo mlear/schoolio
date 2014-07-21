@@ -26,7 +26,7 @@ Student.create(first_name: "Isaac", last_name: "Molotovski", email: "i_am@hackin
   Student.create({
     first_name: first_name,
     last_name: last_name,
-    email: "#{first_name}.#{last_name}@email.com",
+    email: "#{first_name.downcase}.#{last_name.downcase}@email.com",
     password: "foobar"
     })
 end
