@@ -14,6 +14,15 @@ $(document).ready(function(){
 			});
 		};
 
+		function classIn(){
+			console.log(this.text)
+			$("[id='" +this.text + "']").toggle()
+		};
+
+		function classOut(){
+			$("[id='" +this.text + "']").toggle()
+		};
+
 
 	$.post('/chart', function(data){
 		console.log(data)
@@ -21,6 +30,8 @@ $(document).ready(function(){
 		console.log(courseGPAs)
 		chart(courseGPAs)
 	})
+
+	$('#class-list a').hover(classIn, classOut);
 
 })
 

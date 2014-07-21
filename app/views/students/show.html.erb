@@ -38,6 +38,32 @@
 	  <div id="chart"></div>
   </section>
 
+  <section id="class-list">
+  <% course_array = [] %>
+   <% @user.courses.each do |course| %>
+      <% if course_array.find { |name| name == course.name } == nil %>
+        <%= link_to course.name, course_path(course) %>  |
+        <% course_array << course.name %>
+      <% end %>
+   <% end %>
+   <% course_array.each do |course| %>
+     <section id="<%= course %>" style="display:none; margin-top: 15px;">
+      <% @course = Course.find_by_name(course) %>
+          <p><%= @course.name %></p>
+          <p><%= @course.subject %></p>
+          <% grade_array = [] %>
+          <div id ="course-gpa">
+            <% @grades = Grade.where("course_id = ?", @course.id).where("student_id = ?", @user.id) %> 
+              <% @grades.each do |value| %>
+                <% grade_array << value.gpa %>
+             <% end %>
+             <% @average = grade_array.inject(:+) / @grades.count %>
+             Course GPA: <%= @average %>
+          </div>
+    </section>
+   <% end %>
+    </section>
+
 </section>
 
 
