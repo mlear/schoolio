@@ -53,11 +53,12 @@
           <p><%= @course.subject %></p>
           <% grade_array = [] %>
           <div id ="course-gpa">
-            <% @grades = Grade.where("course_id = ?", @course.id).where("student_id = ?", @user.id) %> 
+            <% @grades = Grade.where("course_id = ?", @course.id).where("student_id = ?", @user.id).to_a %>
               <% @grades.each do |value| %>
                 <% grade_array << value.gpa %>
              <% end %>
-             <% @average = grade_array.inject(:+) / @grades.count %>
+
+             <% @average = grade_array.reduce(:+) / @grades.count %>
              Course GPA: <%= @average %>
           </div>
     </section>
